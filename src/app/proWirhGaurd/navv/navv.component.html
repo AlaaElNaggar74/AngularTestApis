@@ -1,0 +1,143 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" routerLink="sechome" routerLinkActive="active"
+      >Navbar</a
+    >
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            aria-current="page"
+            routerLink="sechome"
+            routerLinkActive="active"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="prosgaurd" routerLinkActive="active"
+            >products</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="categaurd" routerLinkActive="active"
+            >categories</a
+          >
+        </li>
+        <li class="nav-item" *ngIf="isLogged && loggedRole == 'user'">
+          <a
+            class="nav-link"
+            routerLink="user-daurd-gu"
+            routerLinkActive="active"
+            >userMain</a
+          >
+        </li>
+        <li class="nav-item" *ngIf="isLogged && loggedRole == 'user'">
+          <a class="nav-link" routerLink="userland-gu" routerLinkActive="active"
+            >userLand</a
+          >
+        </li>
+        <li class="nav-item" *ngIf="isLogged && loggedRole == 'user'">
+          <a class="nav-link" routerLink="userpage-gu" routerLinkActive="active"
+            >userPage</a
+          >
+        </li>
+        <li class="nav-item" *ngIf="isLogged && loggedRole == 'admin'">
+          <a class="nav-link" routerLink="admins-gu" routerLinkActive="active"
+            >adminMain</a
+          >
+        </li>
+        <li class="nav-item" *ngIf="isLogged && loggedRole == 'admin'">
+          <a
+            class="nav-link"
+            routerLink="adminstable-gu"
+            routerLinkActive="active"
+            >adminTable</a
+          >
+        </li>
+        <li class="nav-item" *ngIf="isLogged && loggedRole == 'admin'">
+          <a
+            class="nav-link"
+            routerLink="adminspros-gu"
+            routerLinkActive="active"
+            >adminPros</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="addGaurdCard-gu"
+            routerLinkActive="active"
+            >AddCard</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="vip-gu" routerLinkActive="active"
+            >VIP</a
+          >
+        </li>
+
+        <li class="nav-item" *ngIf="!isLogged">
+          <button
+            class="btn btn-danger"
+            routerLink="loogaurd"
+            (click)="logDirect()"
+            routerLinkActive="active"
+          >
+            {{ isLogged ? "LogOut" : "Login" }}
+          </button>
+        </li>
+        <li class="nav-item dropdown" *ngIf="isLogged">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Wellcome {{ userData.name }}
+          </a>
+          <ul class="dropdown-menu">
+            <li class="nav-item  ps-3 py-2 mx-1 my-2 bg-info text-white">
+              <a
+                class="text-decoration-none text-white"
+                routerLink="loogaurd"
+                (click)="logDirect()"
+                routerLinkActive="active"
+              >
+                {{ isLogged ? "LogOut" : "Login" }}
+              </a>
+            </li>
+            <li class="nav-item  ps-3 py-2 mx-1 my-2 bg-info text-white">
+              <a class="text-decoration-none text-white" routerLink="loogaurd" routerLinkActive="active">
+                userProfile
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <!-- <li class="nav-item">
+          <button
+            class="btn btn-danger"
+            routerLink="loogaurd"
+            (click)='logDirect()'
+            routerLinkActive="active"
+          >
+            {{isLogged?'LogOut':'Login'}}
+          </button>
+        </li> -->
+      </ul>
+    </div>
+  </div>
+</nav>

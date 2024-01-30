@@ -1,0 +1,17 @@
+<p>test-observale works!</p>
+
+<h1>Count {{ coutTTT.c }} -[ And ]- Name: {{ coutName.name }} String Name : {{coutNameString}}</h1>
+<div class="row">
+  <div class="col-md-2 mb-3" *ngFor="let obb of products">
+    <div class="box text-center bg-info">
+      <h1>{{ obb.title }}</h1>
+      <button class="btn btn-danger" (click)="ed(obb)">click</button>
+      <button class="btn btn-danger" (click)="addd()">+</button>
+      <button class="btn btn-danger" (click)="subb()">-</button>
+    </div>
+  </div>
+</div>
+<div class="b text-center">
+  <button class="btn btn-danger" [disabled]="isLoggg" (click)="loggin()">login</button>
+  <button class="btn btn-success ms-2" [disabled]="!isLoggg" (click)="loggout()">logout</button>
+</div>

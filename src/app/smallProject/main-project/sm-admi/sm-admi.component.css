@@ -1,0 +1,31 @@
+/*
+ 
+table.table.table-dark tbody tr.cust-bg {
+  background-color: white !important;
+}
+table.table.table-dark tbody tr.cust-text{
+  color: black !important;
+} 
+
+****** THIS NOT WORK BEACUSE
+Also, not only specificity matters here, 
+make sure you apply the background to the td element and 
+not the tr because bootstrap is applying to the [ td ],[ th ] element so 
+even if you apply the background to tr won't make sense.
+
+*/
+
+/*
+****** THIS will WORK BEACUSE
+*/
+
+table.table.table-dark tbody tr.cust-bg,
+table.table.table-dark tbody tr.cust-bg th,
+table.table.table-dark tbody tr.cust-bg td {
+  background-color: white !important;
+}
+table.table.table-dark tbody tr.cust-text,
+table.table.table-dark tbody tr.cust-text th,
+table.table.table-dark tbody tr.cust-text td {
+  color: black !important;
+}

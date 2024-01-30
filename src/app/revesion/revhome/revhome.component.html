@@ -1,0 +1,456 @@
+<div class="container">
+  <h1 class="text-center">Parent Comp</h1>
+
+  <div class="section">
+    <h1 class="example-label text-center my-4">Pages</h1>
+    <div class="example-button-row text-center">
+      <button
+        mat-raised-button
+        color="primary"
+        class="py-5 px-3"
+        routerLink="/revisonwebsitecard"
+      >
+        Card Parent
+      </button>
+      <button
+        mat-raised-button
+        color="accent"
+        class="ms-4 py-5 px-3"
+        routerLink="/revisonwebsiteland"
+      >
+        LandPage
+      </button>
+      <button
+        mat-raised-button
+        color="accent"
+        class="ms-4 py-5 px-3"
+        routerLink="/json-server"
+      >
+        json-server
+      </button>
+    </div>
+  </div>
+  <div class="angularmat">
+    <section>
+      <div class="example-label">Basic</div>
+      <div class="example-button-row">
+        <button mat-button>Basic</button>
+        <button mat-button color="primary">Primary</button>
+        <button mat-button color="accent">Accent</button>
+        <button mat-button color="warn">Warn</button>
+        <button mat-button disabled>Disabled</button>
+        <a mat-button href="https://www.google.com/" target="_blank">Link</a>
+      </div>
+    </section>
+    <mat-divider></mat-divider>
+    <section>
+      <div class="example-label">Raised</div>
+      <div class="example-button-row">
+        <button mat-raised-button>Basic</button>
+        <button mat-raised-button color="primary">Primary</button>
+        <button mat-raised-button color="accent">Accent</button>
+        <button mat-raised-button color="warn">Warn</button>
+        <button mat-raised-button disabled>Disabled</button>
+        <a mat-raised-button href="https://www.google.com/" target="_blank"
+          >Link</a
+        >
+      </div>
+    </section>
+    <mat-divider></mat-divider>
+    <section>
+      <div class="example-label">Stroked</div>
+      <div class="example-button-row">
+        <button mat-stroked-button>Basic</button>
+        <button mat-stroked-button color="primary">Primary</button>
+        <button mat-stroked-button color="accent">Accent</button>
+        <button mat-stroked-button color="warn">Warn</button>
+        <button mat-stroked-button disabled>Disabled</button>
+        <a mat-stroked-button href="https://www.google.com/" target="_blank"
+          >Link</a
+        >
+      </div>
+    </section>
+    <mat-divider></mat-divider>
+    <section>
+      <div class="example-label">Flat</div>
+      <div class="example-button-row">
+        <button mat-flat-button>Basic</button>
+        <button mat-flat-button color="primary">Primary</button>
+        <button mat-flat-button color="accent">Accent</button>
+        <button mat-flat-button color="warn">Warn</button>
+        <button mat-flat-button disabled>Disabled</button>
+        <a mat-flat-button href="https://www.google.com/" target="_blank"
+          >Link</a
+        >
+      </div>
+    </section>
+    <mat-divider></mat-divider>
+    <section>
+      <div class="example-label">Icon</div>
+      <div class="example-button-row">
+        <div class="example-flex-container">
+          <button
+            mat-icon-button
+            aria-label="Example icon button with a vertical three dot icon"
+          >
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <button
+            mat-icon-button
+            color="primary"
+            aria-label="Example icon button with a home icon"
+          >
+            <mat-icon>home</mat-icon>
+          </button>
+          <button
+            mat-icon-button
+            color="accent"
+            aria-label="Example icon button with a menu icon"
+          >
+            <mat-icon>menu</mat-icon>
+          </button>
+          <button
+            mat-icon-button
+            color="warn"
+            aria-label="Example icon button with a heart icon"
+          >
+            <mat-icon>favorite</mat-icon>
+          </button>
+          <button
+            mat-icon-button
+            disabled
+            aria-label="Example icon button with a open in new tab icon"
+          >
+            <mat-icon>open_in_new</mat-icon>
+          </button>
+        </div>
+      </div>
+    </section>
+    <mat-divider></mat-divider>
+    <section>
+      <div class="example-label">FAB</div>
+      <div class="example-button-row">
+        <div class="example-flex-container">
+          <div class="example-button-container">
+            <button
+              mat-fab
+              color="primary"
+              aria-label="Example icon button with a delete icon"
+            >
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+          <div class="example-button-container">
+            <button
+              mat-fab
+              color="accent"
+              aria-label="Example icon button with a bookmark icon"
+            >
+              <mat-icon>bookmark</mat-icon>
+            </button>
+          </div>
+          <div class="example-button-container">
+            <button
+              mat-fab
+              color="warn"
+              aria-label="Example icon button with a home icon"
+            >
+              <mat-icon>home</mat-icon>
+            </button>
+          </div>
+          <div class="example-button-container">
+            <button
+              mat-fab
+              disabled
+              aria-label="Example icon button with a heart icon"
+            >
+              <mat-icon>favorite</mat-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <mat-divider></mat-divider>
+    <section>
+      <div class="example-label">Mini FAB</div>
+      <div class="example-button-row">
+        <div class="example-flex-container">
+          <div class="example-button-container">
+            <button
+              mat-mini-fab
+              color="primary"
+              aria-label="Example icon button with a menu icon"
+            >
+              <mat-icon>menu</mat-icon>
+            </button>
+          </div>
+          <div class="example-button-container">
+            <button
+              mat-mini-fab
+              color="accent"
+              aria-label="Example icon button with a plus one icon"
+            >
+              <mat-icon>plus_one</mat-icon>
+            </button>
+          </div>
+          <div class="example-button-container">
+            <button
+              mat-mini-fab
+              color="warn"
+              aria-label="Example icon button with a filter list icon"
+            >
+              <mat-icon>filter_list</mat-icon>
+            </button>
+          </div>
+          <div class="example-button-container">
+            <button
+              mat-mini-fab
+              disabled
+              aria-label="Example icon button with a home icon"
+            >
+              <mat-icon>home</mat-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="matrialTwo">
+    <mat-chip-listbox aria-label="Fish selection">
+      <mat-chip-option>One fish</mat-chip-option>
+      <mat-chip-option>Two fish</mat-chip-option>
+      <mat-chip-option color="accent" selected>Accent fish</mat-chip-option>
+      <mat-chip-option color="warn">Warn fish</mat-chip-option>
+    </mat-chip-listbox>
+  </div>
+
+  <div class="matThre">
+    <mat-form-field>
+      <mat-label>Input</mat-label>
+      <input matInput />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Select</mat-label>
+      <mat-select>
+        <mat-option value="one">First option</mat-option>
+        <mat-option value="two">Second option</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Textarea</mat-label>
+      <textarea matInput></textarea>
+    </mat-form-field>
+  </div>
+
+  <h4>Basic native select</h4>
+  <mat-form-field>
+    <mat-label>Cars</mat-label>
+    <select matNativeControl required>
+      <option value="volvo">Volvo</option>
+      <option value="saab">Saab</option>
+      <option value="mercedes">Mercedes</option>
+      <option value="audi">Audi</option>
+    </select>
+  </mat-form-field>
+
+  <!-- 
+<mat-tree>
+  <mat-tree-node> parent node </mat-tree-node>
+  <mat-tree-node> -- child node1 </mat-tree-node>
+  <mat-tree-node> -- child node2 </mat-tree-node>
+</mat-tree> 
+-->
+
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <img
+          src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bts text-center mt-4">
+    <button type="button" class="btn btn-primary">Primary</button>
+    <button type="button" class="btn btn-secondary">Secondary</button>
+    <button type="button" class="btn btn-success">Success</button>
+    <button
+      type="button"
+      class="btn btn-danger"
+      #myname
+      id="goood"
+      (click)="changeCont()"
+    >
+      YSE
+    </button>
+    <button type="button" class="btn btn-warning" (click)="showClass()">
+      Warning
+    </button>
+    <button type="button" class="btn btn-info" (click)="changeBg()">
+      Info
+    </button>
+    <button
+      type="button"
+      class="btn btn-light"
+      #sssd
+      (mouseover)="changeText($event)"
+      (mouseout)="changeTextout($event)"
+    >
+      mouseHover
+    </button>
+    <button type="button" class="btn btn-dark">Dark</button>
+
+    <button type="button" class="btn btn-link">Link</button>
+  </div>
+
+  <div class="card" style="width: 18rem">
+    <img src="..." class="card-img-top" alt="..." />
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">
+        Some quick example text to build on the card title and make up the bulk
+        of the card's content.
+      </p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+  <div class="card" style="width: 18rem">
+    <img src="..." class="card-img-top" alt="..." />
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">
+        Some quick example text to build on the card title and make up the bulk
+        of the card's content.
+      </p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+  <div class="card" style="width: 18rem">
+    <img src="..." class="card-img-top" alt="..." />
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">
+        Some quick example text to build on the card title and make up the bulk
+        of the card's content.
+      </p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+  <div class="card" style="width: 18rem">
+    <img src="..." class="card-img-top" alt="..." />
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">
+        Some quick example text to build on the card title and make up the bulk
+        of the card's content.
+      </p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+  <div class="card" style="width: 18rem">
+    <img src="..." class="card-img-top" alt="..." />
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">
+        Some quick example text to build on the card title and make up the bulk
+        of the card's content.
+      </p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+  <div class="card" style="width: 18rem">
+    <img src="..." class="card-img-top" alt="..." />
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">
+        Some quick example text to build on the card title and make up the bulk
+        of the card's content.
+      </p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+  <div class="card" style="width: 18rem">
+    <img src="..." class="card-img-top" alt="..." />
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">
+        Some quick example text to build on the card title and make up the bulk
+        of the card's content.
+      </p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+  <div class="card" style="width: 18rem">
+    <img src="..." class="card-img-top" alt="..." />
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">
+        Some quick example text to build on the card title and make up the bulk
+        of the card's content.
+      </p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+  <div class="card" style="width: 18rem">
+    <img src="..." class="card-img-top" alt="..." />
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">
+        Some quick example text to build on the card title and make up the bulk
+        of the card's content.
+      </p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+  <div class="card" style="width: 18rem">
+    <img src="..." class="card-img-top" alt="..." />
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">
+        Some quick example text to build on the card title and make up the bulk
+        of the card's content.
+      </p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+  <div class="card" style="width: 18rem">
+    <img src="..." class="card-img-top" alt="..." />
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">
+        Some quick example text to build on the card title and make up the bulk
+        of the card's content.
+      </p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+  <div class="card" style="width: 18rem">
+    <img src="..." class="card-img-top" alt="..." />
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">
+        Some quick example text to build on the card title and make up the bulk
+        of the card's content.
+      </p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+  <button
+    type="button"
+    class="btn btn-danger mt-5"
+    #eleScrol
+    (click)="scrolUp()"
+  >
+    Up
+  </button>
+</div>

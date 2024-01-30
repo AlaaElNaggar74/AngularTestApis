@@ -1,0 +1,60 @@
+.protoRegist_Emp {
+    min-height: 100vh;
+  }
+  .protoRegist_Emp .left {
+    height: 100vh;
+  
+    position: relative;
+  }
+  .protoRegist_Emp .left .authLogo {
+    font-family: "Courier New", Courier, monospace;
+    letter-spacing: -10px;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 5rem;
+  }
+  .protoRegist_Emp .left .welcomeText {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+  }
+  .protoRegist_Emp .left .welcomeText .mainTex {
+    padding: 0 75px;
+    font-size: 2.1rem;
+    color: white;
+  
+    /* text-align: center; */
+  }
+  .protoRegist_Emp .left .welcomeText .alterLink {
+    padding-left: 75px;
+  }
+  
+  .protoRegist_Emp .right {
+    height: 100vh;
+    position: relative;
+  }
+  
+  .protoRegist_Emp .right .form {
+    width: 80%;
+    margin: auto;
+  }
+  .protoRegist_Emp .right .form input::placeholder {
+    color: rgb(155, 154, 154);
+  }
+  .protoRegist_Emp .right .form select {
+    color: rgb(155, 154, 154);
+  }
+  .protoRegist_Emp .right .form select option  {
+    color:rgb(7, 7, 7)
+  }
+  .protoRegist_Emp .right .form select option:checked  {
+    color:white;
+    background-color:#871919;
+  
+  }
+  
+  .custBackGround{
+    background-color: #7b1818;
+   }

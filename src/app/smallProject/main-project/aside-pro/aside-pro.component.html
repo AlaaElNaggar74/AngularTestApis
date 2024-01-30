@@ -1,0 +1,59 @@
+<div class="appear asideBod text-center">
+  <h1 class="pt-5">3NG</h1>
+  <div class="asideUl">
+    <ul>
+      <li
+        routerLink="listone"
+        routerLinkActive="active"
+        class="d-flex align-items-center justify-content-center"
+      >
+        <i class="fa-solid fa-envelope fs-2 {{ bol ? 'me-0' : 'me-2' }}"></i
+        ><span class="spanList" [class.active]="bol">List One</span>
+      </li>
+      <li
+        routerLink="listtwo"
+        routerLinkActive="active"
+        class="d-flex align-items-center justify-content-center"
+      >
+        <i class="fa-brands fa-tiktok fs-2 {{ bol ? 'me-0' : 'me-2' }}"></i
+        ><span class="spanList" [class.active]="bol">List Two</span>
+      </li>
+      <li
+        routerLink="listthree"
+        routerLinkActive="active"
+        class="d-flex align-items-center justify-content-center"
+      >
+        <i class="fa-brands fa-linkedin fs-2 {{ bol ? 'me-0' : 'me-2' }}"></i
+        ><span class="spanList" [class.active]="bol">List Three</span>
+      </li>
+      <li
+        routerLink="listfour"
+        routerLinkActive="active"
+        class="d-flex align-items-center justify-content-center"
+      >
+        <i class="fa-solid fa-cloud fs-2  {{ bol ? 'me-0' : 'me-2' }}"></i
+        ><span class="spanList" [class.active]="bol">List Four</span>
+      </li>
+      <li
+        routerLink="listfive"
+        routerLinkActive="active"
+        class="d-flex align-items-center justify-content-center"
+      >
+        <i class="fa-brands fa-wordpress fs-2  {{ bol ? 'me-0' : 'me-2' }}"></i
+        ><span class="spanList" [class.active]="bol">List Five</span>
+      </li>
+      <li
+        (click)="changeBol()"
+        class="mt-5  m-auto d-flex align-items-center justify-content-center {{
+          bol ? 'd-block' : 'd-none'
+        }}"
+      >
+        <span class="spanList"><i class="fa-solid fa-bars"></i></span>
+      </li>
+      <!-- <li routerLink="listtwo" routerLinkActive="active">List Two</li>
+      <li routerLink="listthree" routerLinkActive="active">List Three</li>
+      <li routerLink="listfour" routerLinkActive="active">List Four</li>
+      <li routerLink="listfive" routerLinkActive="active">List Five</li> -->
+    </ul>
+  </div>
+</div>

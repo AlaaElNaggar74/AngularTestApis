@@ -1,0 +1,35 @@
+<h1>promotion works!</h1>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4 mb-3" *ngFor="let pro of pageEle">
+      <div class="box text-center py-4 bg-info">
+        <h3>{{ pro?.id }}</h3>
+        <h3>{{ pro?.title }}</h3>
+        <h3>{{ pro?.brand }}</h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <app-paginator
+  [currentPage]="currentPage"
+  [totalPages]="totalPages"
+></app-paginator> -->
+<!-- 
+<nav aria-label="Page navigation example" >
+  <ul class="pagination justify-content-center">
+    <li class="page-item"><a class="page-link" >Previous</a></li>
+    <li class="page-item" *ngFor="let tab of arraOf(tabs); index as index">
+      <button class="page-link">{{ index + 1 }}</button>
+    </li>
+
+    <li class="page-item"><a class="page-link">Next</a></li>
+  </ul>
+</nav> -->
+
+<app-paginator
+  [totalItems]="totalItemsPare"
+  [pageSize]="pageSizePare"
+  (pageChanged)="onPageChanged($event)"
+></app-paginator>

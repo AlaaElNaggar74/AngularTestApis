@@ -1,0 +1,66 @@
+<div class="minHeigh">
+  <h1 class="text-center py-2">Product Details</h1>
+  <div class="row align-items-center">
+    <div class="col-md-5">
+      <div class="card">
+        <img [src]="prodWithId?.imagesUrl" class="card-img-top" alt="..." />
+      </div>
+    </div>
+    <div class="col-md-7">
+      <div class="card">
+        name
+
+        <div class="card-body">
+          <h5 class="card-title">id : {{ prodWithId?.id }}</h5>
+          <h5 class="card-title">name : {{ prodWithId?.name }}</h5>
+          <p class="card-text">price : {{ prodWithId?.price }}</p>
+          <h5 class="card-title">quantity : {{ prodWithId?.quantity }}</h5>
+          <h5 class="card-title">categoryId : {{ prodWithId?.categoryId }}</h5>
+          <h5 class="card-title">isSelected : {{ prodWithId?.isSelected }}</h5>
+          <button (click)="prevStep(prevBtn)" class="btn btn-success" [disabled]="PPid == AllProdIDS[0]"  #prevBtn>Prev</button>
+          <!-- <button [disabled]="PPid == AllProdIDS[0]" (click)="prevStep(prevBtn)" class="btn btn-success" #prevBtn>
+            Prev
+          </button> -->
+          <button (click)="backStep()" class="btn btn-primary mx-2">
+            Go Back
+          </button>
+          <button (click)="nextStep(nextBtn)" class="btn btn-danger" [disabled]="PPid == AllProdIDS[AllProdIDS.length - 1]"  #nextBtn>Next</button>
+          <!-- <button [disabled]="PPid == AllProdIDS[AllProdIDS.length - 1]" (click)="nextStep(nextBtn)" class="btn btn-danger" #nextBtn>
+            Next
+          </button> -->
+        </div>
+        <!-- routerLink="/smallproject/smproductsservices" -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="minHeigh">
+  <h1 class="text-center py-2">Product Details</h1>
+  <div class="row align-items-center">
+    <div class="col-md-5">
+      <div class="card">
+        <img [src]="prodWithId.imagesUrl" class="card-img-top" alt="..." />
+      </div>
+    </div>
+    <div class="col-md-7">
+      <div class="card">
+        name
+
+        <div class="card-body">
+          <h5 class="card-title">id : {{ prodWithId.id }}</h5>
+          <h5 class="card-title">name : {{ prodWithId.name }}</h5>
+          <p class="card-text">price : {{ prodWithId.price }}</p>
+          <h5 class="card-title">quantity : {{ prodWithId.quantity }}</h5>
+          <h5 class="card-title">categoryId : {{ prodWithId.categoryId }}</h5>
+          <h5 class="card-title">isSelected : {{ prodWithId.isSelected }}</h5>
+          <a
+            routerLink="/smallproject/smproductsservices"
+            class="btn btn-primary"
+            >Go Back</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->

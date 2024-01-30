@@ -1,0 +1,153 @@
+<app-nav-pro></app-nav-pro>
+<div class="container-fluid ps-0">
+  <div class="row">
+    <div class="{{ hideBol ? 'col-md-1' : 'col-md-3' }} d-md-block d-none">
+      <app-aside-pro
+        (bolEmitter)="bolEmitterPare($event)"
+        [hideValueChild]="hideBol"
+      ></app-aside-pro>
+    </div>
+    <div class="{{ hideBol ? 'col-md-11' : 'col-md-9' }}">
+      <a
+        class="btn btn-primary d-md-none d-inline-block"
+        data-bs-toggle="offcanvas"
+        href="#offcanvasExample"
+        role="button"
+        aria-controls="offcanvasExample"
+      >
+        Aside
+      </a>
+      <a
+        class="btn btn-warning  ms-2  {{
+          hideBol ? 'd-none' : 'd-md-inline-block'
+        }}"
+        (click)="hideSlide()"
+      >
+        <i class="fa-solid fa-xmark"></i>
+      </a>
+      <div
+        class="offcanvas offcanvas-end"
+        tabindex="-1"
+        id="offcanvasExample"
+        aria-labelledby="offcanvasExampleLabel"
+      >
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="offcanvas-body">
+          <div class="asideBod text-center">
+            <h1 class="pt-5">3NG</h1>
+            <div class="asideUl">
+              <ul>
+                <li routerLink="listone" routerLinkActive="active">List One</li>
+                <li routerLink="listtwo" routerLinkActive="active">List Two</li>
+                <li routerLink="listthree" routerLinkActive="active">
+                  List Three
+                </li>
+                <li routerLink="listfour" routerLinkActive="active">
+                  List Four
+                </li>
+                <li routerLink="listfive" routerLinkActive="active">
+                  List Five
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="accordion accordion-flush bg-black mt-5"
+            id="accordionFlushExample"
+          >
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseOne"
+                  aria-expanded="false"
+                  aria-controls="flush-collapseOne"
+                >
+                  Accordion Item #1
+                </button>
+              </h2>
+              <div
+                id="flush-collapseOne"
+                class="accordion-collapse collapse"
+                data-bs-parent="#accordionFlushExample"
+              >
+                <div class="accordion-body">
+                  Placeholder content for this accordion, which is intended to
+                  demonstrate the <code>.accordion-flush</code> class. This is
+                  the first item's accordion body.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseTwo"
+                  aria-expanded="false"
+                  aria-controls="flush-collapseTwo"
+                >
+                  Accordion Item #2
+                </button>
+              </h2>
+              <div
+                id="flush-collapseTwo"
+                class="accordion-collapse collapse"
+                data-bs-parent="#accordionFlushExample"
+              >
+                <div class="accordion-body">
+                  Placeholder content for this accordion, which is intended to
+                  demonstrate the <code>.accordion-flush</code> class. This is
+                  the second item's accordion body. Let's imagine this being
+                  filled with some actual content.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseThree"
+                  aria-expanded="false"
+                  aria-controls="flush-collapseThree"
+                >
+                  Accordion Item #3
+                </button>
+              </h2>
+              <div
+                id="flush-collapseThree"
+                class="accordion-collapse collapse"
+                data-bs-parent="#accordionFlushExample"
+              >
+                <div class="accordion-body">
+                  Placeholder content for this accordion, which is intended to
+                  demonstrate the <code>.accordion-flush</code> class. This is
+                  the third item's accordion body. Nothing more exciting
+                  happening here in terms of content, but just filling up the
+                  space to make it look, at least at first glance, a bit more
+                  representative of how this would look in a real-world
+                  application.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

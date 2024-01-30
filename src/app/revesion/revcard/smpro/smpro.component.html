@@ -1,0 +1,26 @@
+<p class="text-center">smpro works!</p>
+<h1 class="text-center my-3">
+  Child Component Welcome To Child
+  <span class="text-danger my-4"> {{ slectedOne }}</span>
+</h1>
+Search By Name :  <input type="text" value="" (keyup)="inpuChange($event)" >
+<h1 class="py-5">totala chiled= <span class="text-danger">{{totalPriceInChild}}</span> <button class="btn btn-success ms-5" (click)="resetTotalPrice()">reset</button> </h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">title</th>
+      <th scope="col">description</th>
+      <th scope="col">price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pro of proFilterList; index as i">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ pro.title }}</td>
+      <td>{{ pro.description }}</td>
+      <td>{{ pro.price }}</td>
+      <td><button class="comonBtn btn btn-danger" (click)="getTotalPrice(pro)" #colc>Buy</button></td>
+    </tr>
+  </tbody>
+</table>

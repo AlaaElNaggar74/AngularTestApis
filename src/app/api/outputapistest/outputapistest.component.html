@@ -1,0 +1,99 @@
+<div class="minHeigh">
+  <h1 class="py-3 text-center">APIS</h1>
+  <h3 class="my-3 text-center">Dummy-Products</h3>
+  <!-- <div class="row">
+    <div class="col-md-6 col-lg-4 mb-3" *ngFor="let product of allProducts">
+      <div class="card">
+        <div class="imgo">
+          <img [src]="product.images[0]" class="card-img-top" alt="..." />
+        </div>
+        <div class="card-body">
+          <h5 class="card-title text-center">{{ product.title }}</h5>
+          <h5 class="card-title">
+            Brand : <span class="text-danger">{{ product.brand }}</span>
+          </h5>
+          <h5 class="card-title">
+            Price : <span class="text-danger">{{ product.price }} $</span>
+          </h5>
+          <p class="card-text">
+            {{ product.description }}
+          </p>
+          <a [routerLink]="['/products', product.id]" class="btn btn-primary"
+            >View</a
+          >
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <h1 class="my-3 text-center text-danger">
+    ......................................
+  </h1>
+  <div class="col-md-4 m-auto my-3 ">
+    <div class="d-flex" role="search">
+      <input
+        class="form-control me-2 py-2"
+        type="search"
+        placeholder="Search"
+        aria-label="Search"
+      />
+      <button class="btn btn-outline-danger" >Search</button>
+    </div>
+  </div>
+  <div class="row">
+    <div
+      class="col-md-6 col-lg-4 mb-3"
+      *ngFor="let product of allProductsOfMyApis"
+    >
+      <div class="card">
+        <div class="imgo">
+          <img
+            *ngIf="product?.image"
+            [src]="imageUrl + product?.image"
+            class="card-img-top"
+            alt="..."
+          />
+          <img
+            *ngIf="!product?.image"
+            src="https://cdn.iconscout.com/icon/premium/png-256-thumb/image-error-2125973-1789289.png"
+            class="card-img-top"
+            alt="..."
+          />
+        </div>
+        <div class="card-body">
+          <h5 class="card-title text-center">{{ product.name }}</h5>
+          <h5 class="card-title">
+            codeNumber :
+            <span class="text-danger">{{ product.codeNumber }}</span>
+          </h5>
+          <h5 class="card-title d-flex align-items-center">
+            Logo :
+            <div class="logoSize" *ngIf="product?.logo">
+              <img [src]="logUrl + product.logo" alt="error" />
+            </div>
+            <div class="text-danger" *ngIf="!product.logo">Null</div>
+          </h5>
+          <h5 class="card-title">
+            Price : <span class="text-danger">{{ product.price }} $</span>
+          </h5>
+          <p class="card-text">
+            {{ product.description }}
+          </p>
+          <div class="bt text-center">
+            <a [routerLink]="['/products', product.id]" class="btn btn-primary"
+              >View</a
+            >
+            <a
+              (click)="onDelete(product.id)"
+              class="btn btn-danger mx-2"
+              >Delete</a
+            >
+            <a [routerLink]="['/products/edit/', product.id]" class="btn btn-info"
+              >Edit</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

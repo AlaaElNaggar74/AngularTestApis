@@ -1,0 +1,56 @@
+<div class="minHeigh">
+  <div class="protoLogin">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="left col-md-6 d-none d-md-block custBackGround p-5">
+          <h1 class="authLogo text-white">
+            <a routerLink="/" class="text-decoration-none  text-white">APIS</a>
+          </h1>
+          <p class="welcomeText">Welcome Laravel</p>
+        </div>
+        <div
+          class="right col-md-6 d-flex justify-content-center align-items-center"
+        >
+          <div class="form">
+            <form>
+              <div class="mb-3">
+                <input
+                  type="email"
+                  class="form-control ps-4 py-2 rounded-5"
+                  id="email"
+                  placeholder="Email"
+                  aria-describedby="emailHelp"
+                />
+              </div>
+              <div class="mb-3">
+                <input
+                  type="password"
+                  class="form-control ps-4 py-2 rounded-5"
+                  placeholder="Password"
+                  id="password"
+                />
+              </div>
+              <div class="mb-3 form-check">
+                <a routerLink="/forgotpassword" class="text-danger"
+                  >Forgot Password?</a
+                >
+              </div>
+              <button type="submit" class="btn btn-danger rounded-5 w-100">
+                Sign In
+              </button>
+            </form>
+            <p class="form-check mt-3">
+              Dont Have Account?
+              <a
+                routerLink="/register-emp"
+                class="text-danger ms-1 text-decoration-none fw-bold"
+              >
+                Sign Up
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

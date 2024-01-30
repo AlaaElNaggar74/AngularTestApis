@@ -1,0 +1,96 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            aria-current="page"
+            routerLink="smHomePro"
+            routerLinkActive="active"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="smproducts" routerLinkActive="active"
+            >Products</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="smproductsservices"
+            routerLinkActive="active"
+            >Products-services</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="smprcategory"
+            routerLinkActive="active"
+            >Categories</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="smprpromotion"
+            routerLinkActive="active"
+            >Promotion</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="testobserve" routerLinkActive="active"
+            >Observable</a
+          >
+        </li>
+        <li class="nav-item">
+          <button
+            class=" btn btn-{{ issLog ? 'warning' : 'success' }} "
+            routerLink="login"
+            routerLinkActive="active"
+          >
+            {{ issLog ? "logOut" : "login" }}
+          </button>
+        </li>
+        <li class="nav-item">
+          <button
+            class=" btn btn-{{ issLogBehSub ? 'warning' : 'success' }} ms-2"
+            routerLink="login"
+            routerLinkActive="active"
+          >
+            {{ issLogBehSub ? "logOut-beh" : "login-sub" }}
+          </button>
+        </li>
+        <li class="nav-item" *ngIf="issLogBehSub">
+          <button
+            class=" btn btn-{{ issLogBehSub ? 'warning' : 'success' }} ms-2"
+            routerLink="login"
+            routerLinkActive="active"
+          >
+            card : {{ cccc }}
+          </button>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="smadmin" routerLinkActive="active"
+            >Admin</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

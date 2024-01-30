@@ -1,0 +1,179 @@
+<div class="container py-5">
+  <div class="head text-center my-5">
+    <h1 class="">Json Server Data Useing General AppConfig for Urls</h1>
+    <h3>
+      In This Case You Can Replace Your Urls In One Place Like
+      src/config/config.ts/AppConfig better than chage all urls in your project
+    </h3>
+  </div>
+  <!-- The Data Come From Json Server Or Dummy Products  -->
+  <div class="tab">
+    <h1 class="text-center my-3 text-danger">
+      The Data Come From Json Server Or Dummy Products
+    </h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">title</th>
+          <th scope="col">price</th>
+          <th scope="col">rating</th>
+          <th scope="col">stock</th>
+          <th scope="col">category</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products; index as i">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ product.title }}</td>
+          <td>{{ product.price }}</td>
+          <td>{{ product.rating }}</td>
+          <td>{{ product.stock }}</td>
+          <td>{{ product.category }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tab">
+    <h1 class="text-center mt-5 text-danger">
+      The Global Json Object created in asset with extention .json and
+    </h1>
+    <h1 class="text-center my-3 text-danger">
+      Add<br />
+      "baseUrl": "./",<br />
+      "resolveJsonModule": true<br />
+      In <span class="text-danger">tsconfig.json</span>
+    </h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">title</th>
+          <th scope="col">price</th>
+          <th scope="col">rating</th>
+          <th scope="col">stock</th>
+          <th scope="col">category</th>
+          <th scope="col">Local Image</th>
+          <th scope="col">Local logos</th>
+          <th scope="col">aaa</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of productObj.products; index as i">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ product?.title }}</td>
+          <td>{{ product?.price }}</td>
+          <td>{{ product?.rating }}</td>
+          <td>{{ product?.stock }}</td>
+          <td>{{ product?.category }}</td>
+          <td>
+            <img width="50" height="50" [src]="imagePathLocal" alt="error" />
+          </td>
+          <td>
+            <img width="50" height="50" [src]="logoPsathLocal" alt="error" />
+          </td>
+          <td>
+            <img width="50" height="50" [src]="aaa" alt="error" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tab py-5">
+    <ng-container *ngFor="let star of arr(5); index as i">
+      <a (click)="rate(i)" class="cursor-pointer">
+        <i
+          class="fa-solid fa-star fs-1 ms-2"
+          [class.text-warning]="i < rateValue"
+          
+        ></i>
+      </a>
+      <!-- <i class="fa-solid fa-star fs-1 ms-2 text-danger" *ngIf="! (i< 2)"></i> -->
+    </ng-container>
+  </div>
+  <div class="tab">
+    <h1 class="text-center mt-5 text-danger">
+      Generate Class Using ng g class and put variable to it and use in this comonent 
+    </h1>
+    <h1 class="text-center my-3 text-danger">
+     The OutPut will be 
+     </h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">title</th>
+          <th scope="col">price</th>
+          <th scope="col">rating</th>
+          <th scope="col">stock</th>
+          <th scope="col">category</th>
+          <th scope="col">Local Image</th>
+          <th scope="col">Local logos</th>
+          <th scope="col">aaa</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr >
+          <th scope="row">{{ productClass.id }}</th>
+          <td>{{ productClass.title }}</td>
+          <td>{{ productClass.price }}</td>
+          <td>{{ productClass.rating }}</td>
+          <td>{{ productClass.stock }}</td>
+          <td>{{ productClass.category }}</td>
+          <td>
+            <img width="50" height="50" [src]="productClass.thumbnail" alt="error" />
+          </td>
+                  <!-- images as Array Of String Without *ngFor Will make error as the element[any number ] may be not founded  -->
+
+          <!-- <td>
+            <img width="50" height="50" [src]="productClass?.images[0]" alt="error" />
+          </td>
+          <td>
+            <img width="50" height="50" [src]="productClass?.images[1]" alt="error" />
+          </td> -->
+        
+        <!-- images as string -->
+          <!-- <td>
+            <img width="50" height="50" [src]="productClass.images" alt="error" />
+          </td>
+          <td>
+            <img width="50" height="50" [src]="productClass.images" alt="error" />
+          </td> -->
+          <!-- In This Case We Will Use The ngFor To Solve The Error Of Undefine Variabble  -->
+          <td *ngFor="let image of productClass.images">
+            <img width="50" height="50" [src]="image" alt="error" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="section">
+    <h1 class="example-label text-center my-4">Pages</h1>
+    <div class="example-button-row text-center">
+      <button
+        mat-raised-button
+        color="primary"
+        class="py-5 px-3"
+        routerLink="/revisonwebsitecard"
+      >
+        Card Parent
+      </button>
+      <button
+        mat-raised-button
+        color="accent"
+        class="ms-4 py-5 px-3"
+        routerLink="/revisonwebsiteland"
+      >
+        LandPage
+      </button>
+      <button
+        mat-raised-button
+        color="accent"
+        class="ms-4 py-5 px-3"
+        routerLink="/json-server"
+      >
+        json-server
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+.protoLogin {
+    min-height: 100vh;
+  }
+  .protoLogin .left {
+    height: 100vh;
+  
+    position: relative;
+  }
+  .protoLogin .left .authLogo {
+    font-family: "Courier New", Courier, monospace;
+    letter-spacing: -10px;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 5rem;
+  }
+  .protoLogin .left .welcomeText {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 4rem;
+    color: white;
+    width: 100%;
+    /* background-color: aqua; */
+    text-align: center;
+  }
+  .protoLogin .right {
+    height: 100vh;
+    position: relative;
+  }
+  
+  .protoLogin .right .form {
+    width: 80%;
+    margin: auto;
+  }
+  
+  .protoLogin .right .form input::placeholder {
+    color: rgb(155, 154, 154);
+   }
+
+
+   .custBackGround{
+    background-color: #7b1818;
+   }
+   @media (max-width:766px) {
+
+    
+   }

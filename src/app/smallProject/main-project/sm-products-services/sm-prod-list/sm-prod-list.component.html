@@ -1,0 +1,120 @@
+<div class="tabl mt-2 bg-success py-3">
+  <!-- <h1>tttttttttttt {{OnePro.id}}</h1> -->
+  <table class="table cuss">
+    <thead>
+      <tr>
+        <th scope="col">Index</th>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Directive</th>
+        <th scope="col">price</th>
+        <th scope="col">price-using-Custm-Pipe</th>
+        <th scope="col">qantity</th>
+        <th scope="col">categoryId</th>
+        <th scope="col">images</th>
+        <th scope="col">Options</th>
+        <th scope="col">count</th>
+        <th scope="col">BuyField</th>
+      </tr>
+    </thead>
+    <tbody #eleRefPrice>
+      <!-- <tr *ngFor="let pro of products; index as i" [hidden]="pro.categoryId != selectedCategory && selectedCategory !=0"> -->
+      <tr
+        *ngFor="let pro of filterArray; index as i"
+        [class.bg-cus]="pro.quantity == 0"
+      >
+        <th scope="row">{{ i + 1 }}</th>
+        <th scope="row">{{ pro.id }}</th>
+        <td>{{ pro.name }}</td>
+        <td class="dire">Directive {{ i * 2 }}</td>
+        <!-- <td  class="pipppp">{{2023/2/25 | date(['short'])}}</td> -->
+        <td class="refPrice border border-2 border-black">
+          {{ pro.price | currency : "EUR" : "symbol" }}
+        </td>
+        <th>{{ pro.price | egyCurrency : "EGY" }}</th>
+
+        <td [ngSwitch]="pro.quantity">
+          <ng-template [ngSwitchCase]="0">out</ng-template>
+          <ng-template [ngSwitchCase]="1">LastOne</ng-template>
+          <ng-template ngSwitchDefault>{{ pro.quantity }}</ng-template>
+        </td>
+
+        <!-- 
+  
+            <span *ngSwitchCase="0">out</span> equal the expression  <ng-template [ngSwitchCase]="1">LastOne</ng-template> 
+            in this example *ngSwitchCase with any tage === (ng-template with binding ngSwithcCase) like this ng-template [ngSwitchCase] 
+            
+          -->
+        <!-- <td>
+            <ng-container [ngSwitch]="pro.quantity"> 
+              <span *ngSwitchCase="0">out</span>
+              <ng-template [ngSwitchCase]="1">LastOne</ng-template>
+              <ng-template ngSwitchDefault>{{ pro.quantity }}</ng-template>
+            </ng-container>
+          </td> -->
+        <!-- <td>
+            <div [ngSwitch]="pro.quantity"> 
+              <ng-template [ngSwitchCase]="0">out</ng-template>
+              <ng-template [ngSwitchCase]="1">LastOne</ng-template>
+              <ng-template ngSwitchDefault>{{ pro.quantity }}</ng-template>
+            </div>
+          </td> -->
+        <td>{{ pro.categoryId }}</td>
+        <td>
+          <img
+            LightBox="yellow"
+            xc="red"
+            src="{{ pro.imagesUrl }}"
+            width="50"
+            height="50"
+            alt="error"
+          />
+        </td>
+        <td>
+          <button
+            class="btn btn-{{ pro.isSelected ? 'primary' : 'danger' }}"
+            (click)="addCart(pro)"
+          >
+            {{ pro.isSelected ? "DONE" : "select" }}
+          </button>
+        </td>
+        <td>
+          <button
+            class="btn btn-primary"
+            (click)="viewProduct(pro)"
+            >
+            View
+            <!-- [routerLink]="['/smallproject/smproductsservices',{ outlets: { side: ['sammy'] } }]" -->
+            <!-- [routerLink]="['/smallproject/smproductsservices',pro.id]" -->
+          </button>
+        </td>
+        <td>
+          <button>
+            <input
+              type="number"
+              [disabled]="pro.quantity == 0"
+              class="form-control"
+              value="0"
+              min="0"
+              [max]="pro.quantity"
+              #countValue
+            />
+          </button>
+        </td>
+        <td>
+          <button
+            class="btn btn-info"
+            (click)="onBuy(pro, countValue)"
+            [disabled]="pro.quantity == 0"
+          >
+            BUY
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h1 class=" ">
+    The Total Price In Child Is :
+    <span class="text-danger">{{ totaleProductsPrice }}</span>
+  </h1>
+</div>

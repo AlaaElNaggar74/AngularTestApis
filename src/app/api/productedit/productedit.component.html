@@ -1,0 +1,281 @@
+<div class="minHeigh">
+  <h1 class="text-center my-3">Edited New Product</h1>
+  <!-- <form>
+      <div class="mb-3">
+        <div class="row">
+          <div class="col-sm-6 mb-3 mb-sm-0">
+            <input
+              type="text"
+              id="Fname"
+              class="form-control rounded-5 ps-4"
+              placeholder="First name"
+              aria-label="First name"
+            />
+          </div>
+          <div class="col-sm-6">
+            <input
+              type="text"
+              id="Lname"
+              class="form-control rounded-5 ps-4"
+              placeholder="Last name"
+              aria-label="Last name"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <input
+          type="email"
+          class="form-control ps-4 py-2 rounded-5"
+          id="email"
+          placeholder="Work Email"
+          aria-describedby="emailHelp"
+        />
+      </div>
+      <div class="mb-3">
+        <input
+          type="password"
+          class="form-control ps-4 py-2 rounded-5"
+          placeholder="Password"
+          id="password"
+        />
+      </div>
+      <div class="mb-3">
+        <input
+          type="text"
+          class="form-control ps-4 py-2 rounded-5"
+          id="companyName"
+          placeholder="Company Name"
+          aria-describedby="companyNamelHelp"
+        />
+      </div>
+      <div class="mb-3">
+        <select
+          class="form-select rounded-5 text-dark-50"
+          aria-label="Default select example"
+        >
+          <option selected value="0" disabled>Company Location</option>
+          <option value="1">Cairo</option>
+          <option value="2">Giza</option>
+          <option value="3">Alex</option>
+          <option value="4">Tanta</option>
+          <option value="5">El Sharqia</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <select
+          class="form-select rounded-5 text-dark-50"
+          aria-label="Default select example"
+        >
+          <option selected value="0" disabled>Company Size</option>
+          <option value="1">Large</option>
+          <option value="2">Meduim</option>
+          <option value="3">Small</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <input
+          type="text"
+          class="form-control ps-4 py-2 rounded-5"
+          id="hireRole"
+          placeholder="What Role You Are Hiring For?"
+          aria-describedby="hireRolelHelp"
+        />
+      </div>
+
+      <div class="mb-3 form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="flexCheckChecked"
+        />
+        <label class="form-check-label" for="flexCheckChecked">
+          ihave read and agree with
+          <span class="text-danger">Terms of Service </span> and our
+          <span class="text-danger">Privacy Policy </span>
+        </label>
+      </div>
+      <button type="submit" class="btn btn-danger rounded-5 w-100">
+        Sign In
+      </button>
+    </form> -->
+
+  <div class="col-10 col-lg-8 col-md-9 m-auto">
+    <!-- <form method="post" action="" enctype="multipart/form-data"> -->
+    <form [formGroup]="singUpForm" (ngSubmit)="onSubmit(singUpForm)" method="post">
+      <div class="mb-3">
+        <label for="nameInput" class="form-label w-100">
+          <span class="fw-bold fs-5">Name</span>
+          <input
+            type="text"
+            class="form-control"
+            id="nameInput"
+            name="name"
+            formControlName="name"
+            aria-describedby="nameHelp"
+          />
+        </label>
+        <div
+          id="nameHelp"
+          class="form-text text-danger"
+          [hidden]="name?.valid || name?.untouched"
+        >
+          <small *ngIf="name?.errors?.['required']">
+            The Name Is Required . . .
+          </small>
+          <small *ngIf="name?.errors?.['minlength']">
+            requiredLength {{name?.errors?.['minlength'].requiredLength }} and
+            actualLength {{name?.errors?.['minlength'].actualLength }}
+          </small>
+        </div>
+        <div class="laraverError" [hidden]="errArr.name.length == 0">
+          <small class="text-danger">
+           laraver : {{errArr.name[0]}}
+          </small>
+          <!-- <small *ngIf="errArr[0]">
+           {{errArr[0]}}
+          </small> -->
+         
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="logoInput" class="form-label w-100">
+          <span class="fw-bold fs-5">Logo</span>
+          <input
+            type="file"
+            class="form-control"
+            id="logoInput"
+            name="logo"
+            (change)=uploadFile($event)
+            formControlName="logo"
+            aria-describedby="logoHelp"
+          />
+        </label>
+        <div
+          id="logoHelp"
+          class="form-text text-danger"
+          [hidden]="logo?.valid || logo?.untouched"
+        >
+          <small *ngIf="logo?.errors?.['required']"> required </small>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="imageInput" class="form-label w-100">
+          <span class="fw-bold fs-5">Categories</span>
+          <select
+            class="form-select"
+            aria-label="Default select example"
+            name="smcategorieslab_id"
+            formControlName="smcategorieslab_id"
+          >
+            <option disabled selected value="">
+              Open this select Category
+            </option>
+            <option value="1">op1</option>
+            <option value="2">op2</option>
+            <option value="3">op3</option>
+            <option value="4">op4</option>
+          </select>
+        </label>
+        <div
+          [hidden]="smcategorieslab_id?.valid || smcategorieslab_id?.untouched"
+        >
+          <small
+            class="text-danger"
+            *ngIf="smcategorieslab_id?.errors?.['required']"
+          >
+            required
+          </small>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="priceInput" class="form-label w-100">
+          <span class="fw-bold fs-5">Price</span>
+          <input
+            type="number"
+            class="form-control"
+            id="priceInput"
+            name="price"
+            formControlName="price"
+            aria-describedby="priceHelp"
+          />
+        </label>
+        <div [hidden]="price?.valid || price?.untouched">
+          <small class="text-danger" *ngIf="price?.errors?.['required']">
+            required {{ price?.errors | json }}
+          </small>
+          <small class="text-danger" *ngIf="price?.errors?.['max']">
+            max should be {{price?.errors?.['max']?.max}} and actual is
+            {{price?.errors?.['max']?.actual}}
+          </small>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="descInput" class="form-label w-100">
+          <span class="fw-bold fs-5">Description</span>
+          <input
+            type="text"
+            class="form-control"
+            id="descInput"
+            name="description"
+            formControlName="description"
+            aria-describedby="descHelp"
+          />
+        </label>
+        <div [hidden]="description?.valid || description?.untouched">
+          <small class="text-danger" *ngIf="description?.errors?.['required']">
+            required
+          </small>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="codeInput" class="form-label w-100">
+          <span class="fw-bold fs-5">CodeNum</span>
+          <input
+            type="number"
+            class="form-control"
+            id="codeInput"
+            name="codeNumber"
+            formControlName="codeNumber"
+            aria-describedby="codeHelp"
+          />
+        </label>
+        <div [hidden]="codeNumber?.valid || codeNumber?.untouched">
+          <small class="text-danger" *ngIf="codeNumber?.errors?.['required']">
+            required
+          </small>
+          <small class="text-danger" *ngIf="codeNumber?.errors?.['max']">
+            max should be {{codeNumber?.errors?.['max']?.max}} and actual {{codeNumber?.errors?.['max']?.actual}}
+          </small>
+
+        </div>
+        <div class="laraverError" [hidden]="errArr.codeNumber.length == 0">
+          <small class="text-danger">
+           laraver : {{errArr.codeNumber[0]}}
+          </small>
+          <!-- <small *ngIf="errArr[0]">
+           {{errArr[0]}}
+          </small> -->
+         
+        </div>
+      </div>
+      <!-- <div class="mb-3">
+          <label for="imageInput" class="form-label w-100">
+            <span class="fw-bold fs-5">Image</span>
+            <input
+              type="text"
+              class="form-control"
+              id="descInput"
+              name="image"
+              value=""
+              aria-describedby="imageHelp"
+            />
+          </label>
+        </div> -->
+      <button type="submit" class="btn btn-primary" [disabled]="singUpForm.invalid" >Submit</button>
+      <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+    </form>
+  </div>
+</div>

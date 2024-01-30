@@ -1,0 +1,34 @@
+<div class="par py-5 bg-info">
+  <h1 class="text-center my-4 text-danger">All Products Using Services</h1>
+
+  <div class="catSelect d-flex align-items-center">
+    <h1 class="mb-0">Category :</h1>
+    <select
+      class="form-select ms-2 w-50"
+      aria-label="Default select example"
+      [(ngModel)]="selectedCategory"
+    >
+      <option selected value="0">All</option>
+      <option
+        value="{{ cat.id }}"
+        *ngFor="let cat of categories; index as index"
+      >
+        {{ cat.name }}
+      </option>
+    </select>
+  </div>
+  <h1 class="my-3">
+    {{ "the selected element is" | titlecase }} {{ selectedCategory }}
+  </h1>
+  <div class="tab">
+    <app-sm-prod-list
+      [outerCatId]="selectedCategory"
+      (totalClicks)="totalToParent($event)"
+    ></app-sm-prod-list>
+  </div>
+
+  <h1 class=" ">
+    The Total Price In Parent Is :
+    <span class="text-danger">{{ totalChildProdPrice }}</span>
+  </h1>
+</div>

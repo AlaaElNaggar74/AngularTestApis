@@ -1,0 +1,182 @@
+<div class="dash">
+  <h1 class="text-center my-4 text-danger">Admin DashBoard</h1>
+
+  <div class="types text-center my-3">
+    <button class="btn btn-success" (click)="onChangesType('product')" #prodBtn>
+      Products
+    </button>
+    <button
+      class="btn btn-primary ms-2"
+      (click)="onChangesType('category')"
+      #catBtn
+    >
+      Categories
+    </button>
+    <!-- class="{{!typeBool?'btn btn-danger ':'btn btn-success' }}" -->
+    <!-- [class]="typeBool ? 'btn btn-danger ' : 'btn btn-success'" -->
+    <!-- [class.ms-2]="typeBool" -->
+    <!-- [ngClass]="{'m-0 p-0 fw-bold' :typeBool,'border border-5 border-black':false}" -->
+    <!-- 
+    <button 
+    class="fs-1 text-info p-5 m-5 btn btn-warning "
+    [class]="false"
+    >
+      Test
+    </button> -->
+  </div>
+  <div
+    class="tablProducts mt-2 {{ typeBool == 'product' ? 'd-block' : 'd-none' }}"
+  >
+    <h1 class="m-3 text-center">
+      The Order Total Price Is :
+      <span class="text-danger ms-3">{{ orderTotalPrice }}</span>
+    </h1>
+    <h1 class="m-3 text-center d-flex align-items-center">
+      <span>Filter By Category :</span>
+      <select
+        class="form-select ms-2 w-50"
+        aria-label="Default select example"
+        [(ngModel)]="selectedCategory"
+      >
+        <option selected value="0">All</option>
+        <option *ngFor="let cat of categoryListInterFave" value="{{ cat.id }}">
+          {{ cat.name }}
+        </option>
+      </select>
+    </h1>
+    <table class="table table-dark">
+      <thead>
+        <tr>
+          <th scope="col">Index</th>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Price</th>
+          <th scope="col">Qantity</th>
+          <th scope="col">Images</th>
+          <th scope="col">Count</th>
+          <th scope="col">CategoryId</th>
+          <th scope="col">Operation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container
+          *ngFor="let product of productListInterFace; index as i; odd as odd"
+        >
+          <tr
+            *ngIf="
+              product.categoryId == selectedCategory || selectedCategory == 0
+            "
+            [class.cust-bg]="product.quantity == 0"
+            [class.cust-text]="product.quantity == 0"
+          >
+            <th
+              [class.cust-bg]="product.quantity == 0"
+              [class.cust-text]="product.quantity == 0"
+              scope="row"
+            >
+              {{ i + 1 }}
+            </th>
+            <th scope="row">
+              {{ product.id }}
+            </th>
+            <td>
+              {{ product.name }}
+            </td>
+            <td>
+              {{ product.price }}
+            </td>
+
+            <td *ngIf="product.quantity == 0; else falssa">out</td>
+            <ng-template #falssa>
+              <td>{{ product.quantity }}</td>
+            </ng-template>
+
+            <!-- <td>
+              <ng-container
+                *ngIf="product.quantity == 0; then truess; else falss"
+              ></ng-container>
+              <ng-template #truess> out </ng-template>
+              <ng-template #falss>
+                {{ product.quantity }}
+              </ng-template>
+            </td> -->
+
+            <!-- <ng-container
+              *ngIf="product.quantity == 0; then truess; else falss"
+            ></ng-container>
+            <ng-template #truess>
+              <td>out</td>
+            </ng-template>
+            <ng-template #falss>
+              <td>{{ product.quantity }}</td>
+            </ng-template> -->
+
+            <!-- <td>{{product.quantity == 0 ?'Out': product.quantity}}</td> -->
+
+            <!-- <td *ngIf="product.quantity == 0">Out</td>
+            <td *ngIf="product.quantity != 0">{{product.quantity}}</td> -->
+
+            <!-- <td>
+              <ng-container [ngSwitch]="product.quantity">
+                <span *ngSwitchCase="0">Out</span>
+                <span *ngSwitchCase="1">Last</span>
+                <span *ngSwitchDefault>{{product.quantity}}</span>
+              </ng-container>
+            </td> -->
+            <td>
+              <img
+                src="{{ product.imagesUrl }}"
+                alt="error"
+                width="50"
+                height="50"
+              />
+            </td>
+            <td>
+              <input
+                type="number"
+                #countValue
+                [disabled]="product.quantity == 0"
+                class="form-control"
+                name="count"
+                value="0"
+                min="0"
+              />
+            </td>
+            <td>
+              {{ product.categoryId }}
+            </td>
+            <td>
+              <button
+                class="btn btn-{{ product.quantity == 0 ? 'danger' : 'info' }}"
+                [disabled]="product.quantity == 0"
+                (click)="buyFunction(countValue, product)"
+              >
+                Buy
+              </button>
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+  <div
+    class="tablCtegories mt-2 {{
+      typeBool == 'category' ? 'd-block' : 'd-none'
+    }}"
+  >
+    <table class="table table-danger">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let category of categoryListInterFave; index as i">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ category.name }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

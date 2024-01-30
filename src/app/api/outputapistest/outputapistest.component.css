@@ -1,0 +1,21 @@
+.minHeigh{
+    min-height: 72vh;
+}
+.imgo{
+    height: 300px;
+}
+.imgo img{
+    height: 100%;
+}
+.logoSize{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: aqua;
+    overflow: hidden;
+}
+.logoSize img{
+    width: 100%;
+    height: 100%;
+ 
+}

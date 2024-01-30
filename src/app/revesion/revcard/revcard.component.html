@@ -1,0 +1,84 @@
+<div class="container">
+  <h1 class="mt-5 text-center text-danger">Select Your Categories</h1>
+  <h1 class="mb-5 text-center text-primary">Parent Component</h1>
+
+  <div class="row">
+    <div class="col-md-4">
+      <select
+        class="form-select"
+        aria-label="Default select example"
+        [(ngModel)]="selectedId"
+      >
+        <option selected value="0">all</option>
+        <option *ngFor="let cate of categoryList" [value]="cate.id">
+          {{ cate.name }}
+        </option>
+      </select>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <select
+      class="form-select"
+      aria-label="Default select example"
+      value="1"
+      (change)="onChange($event)"
+    >
+      <option selected value="white">White</option>
+      <option value="info">info</option>
+      <option value="warning">warning</option>
+      <option value="success">success</option>
+      <option value="primary">primary</option>
+    </select>
+  </div>
+  <h1>
+    Or Serch By Nmae <input type="text" value="" [(ngModel)]="searchInpPar" />
+  </h1>
+  <h1>
+    Or Serch By Nmae When Click<input
+      type="text"
+      value=""
+      (change)="searchInpParClickedFun($event)"
+    /><a class="btn btn-outline-primary" (click)="searchOnClick()">Search</a>
+  </h1>
+  <div class="childOut">
+    <h1 class="text-center my-3">
+      Parent Component Selected Value Is : {{ selectedId }}
+    </h1>
+    <h1 class="text-center my-3 text-bg-dark  " >
+      Parent Component Selected Color Is : {{ backGrColor }}
+    </h1>
+    <h1 class="">
+      Total Price Is In Parent :
+      <span class="text-bg-danger px-3 fs-2">{{ totalaValue }}</span>
+    </h1>
+    <div class="div" *ngIf="newARR.length !== 0">
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">title</th>
+            <th scope="col">description</th>
+            <th scope="col">price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pro of newARR; index as i">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>{{ pro.title }}</td>
+            <td>{{ pro.price }}</td>
+            <td><button class="comonBtn btn btn-danger" (click)="delet(pro)" #colc>delet</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <app-smpro
+      [slectedOne]="selectedId"
+      [searchInpChi]="searchInpPar"
+      [searchInpChiClickedChil]="searchInpChiClickedPar"
+      [backGrColorChild]="backGrColor"
+      (passTotalEmmiter)="totalPriceInParent($event)"
+    ></app-smpro>
+  </div>
+</div>
+<!-- [totalchile]="clacTotal()" -->
