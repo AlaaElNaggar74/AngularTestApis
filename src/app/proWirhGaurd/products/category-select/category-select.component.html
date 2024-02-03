@@ -1,0 +1,14 @@
+<h1 class="text-center justify-content-center mt-5 d-flex align-items-center">
+  <span>Select Category</span>
+  <select
+    class="form-select ms-3 w-50"
+    aria-label="Default select example"
+    [(ngModel)]="categoryId"
+    (change)="onSelectValuChang()"
+  >
+    <option disabled selected value="0">Choose</option>
+    <option value="1">One-1</option>
+    <option value="2">Two-2</option>
+    <option value="3">Three-3</option>
+  </select>
+</h1>

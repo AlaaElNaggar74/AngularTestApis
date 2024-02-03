@@ -25,6 +25,7 @@ export class ProsDetilsComponent {
   index: number = 0;
   // indexBool:boolean=false;
   AllProdIDS: number[] = [];
+  AllProdToGetIndex: InterfaceProducts[] = [];
 
   constructor(
     private _Router: Router,
@@ -66,32 +67,48 @@ export class ProsDetilsComponent {
       );
     });
     this.AllProdIDS = this._ProServicesService.getAllProsIds_Internal();
+    this.AllProdToGetIndex = this._ProServicesService.getAllProSer_Internal();
   }
 
   backStep() {
     // this._Location.assign('smallproject/smproductsservices');
     this._Location.back();
   }
-  nextStep(event:HTMLElement) {
+  nextStep(event: HTMLElement) {
     this.index = this.AllProdIDS.findIndex((ele: number) => ele == this.PPid);
 
     if (this.index != this.AllProdIDS.length - 1) {
       let nextPr = this.AllProdIDS[this.index + 1];
       this._Router.navigate(['/smallproject/smproductsservices', nextPr]);
-    }else{
+    } else {
       // event.setAttribute('disabled','')
     }
+
+    // /// ///  //   Get Index Of Array // //
+  // // // Using FindIndex 
+  //   let index = this.AllProdToGetIndex.findIndex((ele) => ele.id == this.PPid);
+  //   let nextIndex = this.AllProdToGetIndex[index + 1].id;
+  //   this._Router.navigate(['/smallproject/smproductsservices', nextIndex]);
   }
-  prevStep(event:HTMLElement) {
-    this.index = this.AllProdIDS.findIndex((ele: number) => ele == this.PPid);
-    // console.log(this.index);
-    if (this.index != 0) {
-      let nextPr = this.AllProdIDS[this.index - 1];
-      this._Router.navigate(['/smallproject/smproductsservices', nextPr]);
-      // console.log('ddddddddd', nextPr);
-    }
-    else{
+  prevStep(event: HTMLElement) {
+      this.index = this.AllProdIDS.findIndex((ele: number) => ele == this.PPid);
+      // console.log(this.index);
+      if (this.index != 0) {
+        let nextPr = this.AllProdIDS[this.index - 1];
+        this._Router.navigate(['/smallproject/smproductsservices', nextPr]);
+        // console.log('ddddddddd', nextPr);
+      } else {
+      }
+
+
+    // // Using FindIndex 
+  //   let index = this.AllProdToGetIndex.findIndex(
+  //     (ele): any => ele.id == this.PPid
+  //   );
+  //   let prevIndex = this.AllProdToGetIndex[index - 1].id;
+  //   this._Router.navigate(['/smallproject/smproductsservices', prevIndex]);
+  // }
 
     }
-  }
+
 }

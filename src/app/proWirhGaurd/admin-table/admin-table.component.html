@@ -1,5 +1,5 @@
 <h1 class="text-bg-danger text-center mt-5">admin-table works!</h1>
-<div class="text-center mt-5">
+<!-- <div class="text-center mt-5">
   <div class="btn-group" role="group" aria-label="Basic mixed styles example">
     <button class="btn btn-success fs-1 fw-bolder py-3 px-5" (click)="add()">
       Add
@@ -8,4 +8,57 @@
       Sub
     </button>
   </div>
+</div> -->
+
+<div class="tab mt-3 py-5">
+  <h1 class="text-center mb-2">Admin Products DashBoard</h1>
+  <h1>
+    Create Products :
+    <a class="btn btn-primary ms-2" routerLink="/service-gaurd/prosgaurd/create"
+      >create</a
+    >
+  </h1>
+  <table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">name</th>
+        <th scope="col">price</th>
+        <th scope="col">quantity</th>
+        <th scope="col">categoryId</th>
+        <th scope="col">imagesUrl</th>
+        <th scope="col">isSelected</th>
+        <th scope="col" class="text-center">Operation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of adminProducts; index as index">
+        <th scope="row">{{ product.id }}</th>
+        <td>{{ product.name }}</td>
+        <td>{{ product.price }}</td>
+        <td>{{ product.quantity }}</td>
+        <td>{{ product.categoryId }}</td>
+        <td><img [src]="product.imagesUrl" width="50" height="50" alt="error"></td>
+        <td>{{ product.isSelected }}</td>
+        <td class="text-center">
+          <a
+            class="btn btn-success"
+            [routerLink]="['/service-gaurd/prosgaurd/', product.id]"
+            >View</a
+          >
+          <a
+            class="btn btn-primary mx-1"
+            [routerLink]="['/service-gaurd/prosgaurd/edite',product.id]"
+            >Edit</a
+          >
+          <a class="btn btn-danger" (click)="deleteFun(product.id)"
+            >Delete</a
+          >
+          <!-- <a class="btn btn-danger" routerLink="/service-gaurd/prosgaurd/"
+            >Delete</a
+          > -->
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>

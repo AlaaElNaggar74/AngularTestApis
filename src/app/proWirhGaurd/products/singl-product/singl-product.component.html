@@ -1,0 +1,33 @@
+<div class="card">
+  <img
+    [src]="theUsedProduct?.imagesUrl"
+    class="card-img-top"
+    alt="Error"
+    height="200"
+  />
+  <div class="card-body">
+    <h3 class="card-title">Name : {{ theUsedProduct?.name }}</h3>
+    <h4>Price {{ theUsedProduct?.price | currency : "USD":"symbol" }}</h4>
+    <h4>Quantity {{ theUsedProduct?.quantity }}</h4>
+    <h4>CategoryId : {{ theUsedProduct?.categoryId }}</h4>
+  </div>
+  <div class="btGro d-flex justify-content-center">
+    <a class="btn btn-success" [routerLink]="['/service-gaurd/prosgaurd/',theUsedProduct.id]">View</a>
+    <a
+    class="btn btn-{{
+      theUsedProduct.isSelected ? 'warning ' : 'info'
+    }} ms-1"
+    (click)="clickAddCardBtn(theUsedProduct.id,theUsedProduct.isSelected)"
+    >{{ theUsedProduct.isSelected ? "Remove From Card" : "Add To Card" }}
+  </a>
+  </div>
+
+  <div class="btGro d-flex justify-content-center">
+    <a
+      class="btn btn-primary my-1 w-100  "
+      (click)="testEventEmitFromChildOfChild()"
+      >test Event Emit From Child Of Child
+    </a>
+  </div>
+</div>
+<!-- {{theUsedProduct | json}} -->

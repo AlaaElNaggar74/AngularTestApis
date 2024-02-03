@@ -1,0 +1,124 @@
+<h1 class="text-bg-danger text-center mt-5">Form works!</h1>
+
+<div class="f mt-3 col-md-6 col-sm-8 col-10 m-auto">
+  <h1 class="text-center">Create</h1>
+  <!-- <form class="py-4 px-2 rounded rounded-3 bg-info bg-opacity-50" (ngSubmit)="onSubmitt($event)"> -->
+  <form
+    class="py-4 px-2 rounded rounded-3 bg-info bg-opacity-50"
+    (ngSubmit)="onSubmitt($event)"
+    method="post"
+  >
+    <div class="mb-3">
+      <label for="exampleInputName" class="form-label">Name : </label>
+      <input
+        required
+        type="text"
+        class="form-control"
+        id="exampleInputName"
+        aria-describedby="nameHelp"
+        name="name"
+        placeholder="Enter The Name"
+        [(ngModel)]="name"
+        value=""
+      />
+      <!--Notes 
+            1- If ngForm is used, all the input fields which have 
+                [(ngModel)]="" must have an attribute name="" with a value.
+
+                    OR
+
+            2- By setting [ngModelOptions]="{standalone: true}" 
+                one tells Angular something like, ignore the form and/or ngForm
+      -->
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputprice" class="form-label">Price : </label>
+      <input
+        required
+        type="number"
+        class="form-control"
+        id="exampleInputprice"
+        aria-describedby="priceHelp"
+        name="price"
+        placeholder="Enter The Price"
+        value=""
+        [(ngModel)]="price"
+      />
+      <!--Notes 
+              1- If ngForm is used, all the input fields which have 
+                  [(ngModel)]="" must have an attribute name="" with a value.
+  
+                      OR
+  
+              2- By setting [ngModelOptions]="{standalone: true}" 
+                  one tells Angular something like, ignore the form and/or ngForm
+        -->
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputquantity" class="form-label">Quantity : </label>
+      <input
+        type="number"
+        class="form-control"
+        id="exampleInputquantity"
+        aria-describedby="quantityHelp"
+        name="quantity"
+        placeholder="Enter The Quantity"
+        [(ngModel)]="quantity"
+      />
+      <!--Notes 
+              1- If ngForm is used, all the input fields which have 
+                  [(ngModel)]="" must have an attribute name="" with a value.
+  
+                      OR
+  
+              2- By setting [ngModelOptions]="{standalone: true}" 
+                  one tells Angular something like, ignore the form and/or ngForm
+        -->
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputimagesUrl" class="form-label"
+        >imagesUrlAsString :
+      </label>
+      <input
+        type="text"
+        class="form-control"
+        id="exampleInputimagesUrl"
+        aria-describedby="imagesUrlHelp"
+        name="imagesUrl"
+        placeholder="Enter The Image"
+        value=""
+        [(ngModel)]="imagesUrl"
+      />
+      <!--Notes 
+              1- If ngForm is used, all the input fields which have 
+                  [(ngModel)]="" must have an attribute name="" with a value.
+  
+                      OR
+  
+              2- By setting [ngModelOptions]="{standalone: true}" 
+                  one tells Angular something like, ignore the form and/or ngForm
+        -->
+    </div>
+
+    <select
+      class="form-select"
+      aria-label="Default select example"
+      name="categoryId"
+      [(ngModel)]="categoryId"
+    >
+      <option selected disabled value="0">Choose Category</option>
+      <option *ngFor="let cat of allCateg" value="{{ cat.id }}">
+        {{ cat.name }}
+      </option>
+    </select>
+    <div class="my-3 form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <div class="tbb mt-3 text-center">
+    <button class="btn btn-danger" (click)="backFun()">Back</button>
+  </div>
+</div>

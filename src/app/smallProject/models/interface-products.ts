@@ -5,5 +5,5 @@ export interface InterfaceProducts {
   quantity: number;
   categoryId: number;
   imagesUrl: string;
-  isSelected:boolean,
+  isSelected: boolean;
 }

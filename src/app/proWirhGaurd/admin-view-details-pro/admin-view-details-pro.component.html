@@ -1,0 +1,77 @@
+<div class="minHeigh">
+  <h1 class="text-center py-2">Product Details</h1>
+  <div class="row align-items-center">
+    <div class="col-md-5">
+      <div class="card">
+        <img
+          src="{{prodObj?.imagesUrl?prodObj?.imagesUrl:'https://fakeimg.pl/350x200/?text=World&font=lobster'}}"
+          height="400"
+          class="card-img-top"
+          alt="error"
+        />
+      </div>
+    </div>
+    <div class="col-md-7">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">id :{{ prodObj?.id }}</h2>
+          <h2 class="card-title">
+            name : <span class="text-danger">{{ prodObj?.name }}</span>
+          </h2>
+
+          <!-- <h2 class="card-text">
+            price :
+            <span class="text-danger">{{
+              prodObj?.price | currency : "USD"
+            }}</span>
+          </h2> -->
+
+          <!-- // error 
+                Argument of type 'number | undefined' is not
+                 assignable to parameter of type 'number'.
+                 Type 'undefined' is not assignable to type 'number'
+                -->
+          <!-- <h2 class="card-text">
+            price :
+            <span class="text-danger">{{
+              prodObj?.price | egyCurrency : "EGY"
+            }}</span>
+          </h2> -->
+
+          <!-- /// work because ! -->
+          <!-- <h2 class="card-text">
+            price :
+            <span class="text-danger">{{          
+              prodObj?.price! | egyCurrency : "EGY"
+            }}</span>
+          </h2> -->
+
+          <!-- work as you need to check first -->
+          <h2 class="card-text">
+            price :
+            <span class="text-danger">{{
+              prodObj?.price ? (prodObj?.price! | egyCurrency : "EGY") : ""
+            }}</span>
+          </h2>
+
+
+          <h2 class="card-title">
+            quantity : <span class="text-danger">{{ prodObj?.quantity }}</span>
+          </h2>
+          <h2 class="card-title">
+            categoryId :
+            <span class="text-danger">{{ prodObj?.categoryId }}</span>
+          </h2>
+          <h2 class="card-title">
+            isSelected :
+            <span class="text-danger">{{ prodObj?.isSelected }}</span>
+          </h2>
+
+          <button (click)="backStep()" class="btn btn-primary mx-2">
+            Go Back
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

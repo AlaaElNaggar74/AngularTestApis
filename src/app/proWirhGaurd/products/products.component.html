@@ -1,1 +1,28 @@
 <h1 class="text-bg-danger text-center mt-5">products works!</h1>
+
+<div class="d-flex justify-content-between my-3">
+  <app-category-select
+    (getSlect)="getSelectedFromChild($event)"
+  ></app-category-select>
+  <!-- <app-category-search ></app-category-search> -->
+  <app-category-search
+    (getSearchName)="getSearchNameFromChild($event)"
+  ></app-category-search>
+</div>
+<!-- <h1 class="test MY-5">
+ SELECTED CAT ID =  {{parentSelectedCat}}
+</h1>
+<h1 class="test MY-5">
+ SearchName =  {{parentSearchName}}
+</h1> -->
+<div class="row">
+  <!-- <ng-container *ngFor="let product of numberToArr(5)"> -->
+  <ng-container *ngFor="let product of products">
+    <app-product-list
+      [productParentItem]="product"
+      class="col-md-4 mb-3"
+      (clickAddEvent)="displayChildOfChild($event)"
+    ></app-product-list>
+  </ng-container>
+  <h1>------------- {{displayValue}} --------------</h1>
+</div>

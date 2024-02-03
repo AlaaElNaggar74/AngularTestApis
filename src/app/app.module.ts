@@ -77,6 +77,13 @@ import { VipComponent } from './proWirhGaurd/vip/vip.component';
 import { RegisterGaurdComponent } from './proWirhGaurd/register-gaurd/register-gaurd.component';
 import { AdminNotAuthComponent } from './proWirhGaurd/admin-not-auth/admin-not-auth.component';
 import { UserNotAuthComponent } from './proWirhGaurd/user-not-auth/user-not-auth.component';
+import { AdminCreateProComponent } from './proWirhGaurd/admin-create-pro/admin-create-pro.component';
+import { AdminEditProComponent } from './proWirhGaurd/admin-edit-pro/admin-edit-pro.component';
+import { AdminViewDetailsProComponent } from './proWirhGaurd/admin-view-details-pro/admin-view-details-pro.component';
+import { ProductListComponent } from './proWirhGaurd/products/product-list/product-list.component';
+import { SinglProductComponent } from './proWirhGaurd/products/singl-product/singl-product.component';
+import { CategorySelectComponent } from './proWirhGaurd/products/category-select/category-select.component';
+import { CategorySearchComponent } from './proWirhGaurd/products/category-search/category-search.component';
 
 @NgModule({
   declarations: [
@@ -147,6 +154,13 @@ import { UserNotAuthComponent } from './proWirhGaurd/user-not-auth/user-not-auth
     RegisterGaurdComponent,
     AdminNotAuthComponent,
     UserNotAuthComponent,
+    AdminCreateProComponent,
+    AdminEditProComponent,
+    AdminViewDetailsProComponent,
+    ProductListComponent,
+    SinglProductComponent,
+    CategorySelectComponent,
+    CategorySearchComponent,
   ],
   imports: [
     BrowserModule,

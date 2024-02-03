@@ -61,6 +61,9 @@ import { userGaurdGuard } from './proWirhGaurd/services/gaurd/user-gaurd.guard';
 import { UserNotAuthComponent } from './proWirhGaurd/user-not-auth/user-not-auth.component';
 import { AdminNotAuthComponent } from './proWirhGaurd/admin-not-auth/admin-not-auth.component';
 import { adminGaurdGuard } from './proWirhGaurd/services/gaurd/admin-gaurd.guard';
+import { AdminCreateProComponent } from './proWirhGaurd/admin-create-pro/admin-create-pro.component';
+import { AdminEditProComponent } from './proWirhGaurd/admin-edit-pro/admin-edit-pro.component';
+import { AdminViewDetailsProComponent } from './proWirhGaurd/admin-view-details-pro/admin-view-details-pro.component';
 
 const routes: Routes = [
   {
@@ -255,6 +258,23 @@ const routes: Routes = [
             title: 'products-gaurd',
             component: ProductsGaurdComponent,
           },
+          {
+            path: 'prosgaurd/create',
+            title: 'admins-create-gaurd',
+            canActivate: [adminGaurdGuard],
+            component: AdminCreateProComponent,
+          },
+          {
+            path: 'prosgaurd/edite/:id',
+            title: 'admins-edit-gaurd',
+            canActivate: [adminGaurdGuard],
+            component: AdminEditProComponent,
+          },
+          {
+            path: 'prosgaurd/:id',
+            title: 'Public-Details',
+            component: AdminViewDetailsProComponent,
+          },
 
           {
             path: 'categaurd',
@@ -306,7 +326,7 @@ const routes: Routes = [
           {
             path: 'admin-not-autharized',
             title: 'admin-not-autharized',
-          
+
             component: AdminNotAuthComponent,
           },
           {
