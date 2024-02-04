@@ -1,7 +1,7 @@
 import { ApiProductsService } from './../services/allServ/api-products.service';
 import { Location } from '@angular/common';
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { InterfaceProducts } from 'src/app/smallProject/models/interface-products';
 
 @Component({
@@ -15,7 +15,8 @@ export class AdminViewDetailsProComponent {
   constructor(
     private _Location: Location,
     private _ActivatedRoute: ActivatedRoute,
-    private _ApiProductsService: ApiProductsService
+    private _ApiProductsService: ApiProductsService,
+    private _Router:Router
   ) {
     // // Any [ SnapShot ] Will Not Work Good When Go To The Same Like
     // this.prodIdDetails=Number(_ActivatedRoute.snapshot.params['id']);
@@ -61,6 +62,9 @@ export class AdminViewDetailsProComponent {
         console.log('getOneProduct-data', data);
       },
       error: (error: any) => {
+        // if (error.error == "Not Found") {
+        // this._Router.navigate(['**']);
+        // }
         console.log('getOneProduct-Error', error);
       },
       complete: () => {

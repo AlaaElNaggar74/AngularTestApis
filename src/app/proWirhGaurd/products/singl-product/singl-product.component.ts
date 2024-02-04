@@ -1,3 +1,4 @@
+import { AuthService } from './../../services/allServ/auth.service';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ApiProductsService } from '../../services/allServ/api-products.service';
 import { ShoppingCardService } from '../../services/allServ/shopping-card.service';
@@ -12,13 +13,21 @@ export class SinglProductComponent {
   theUsedProduct: any;
   // theUsedProduct:object | null=null;
   // theUsedProduct:object | undefined=undefined;
+  theUserRole:any;
   @Input() singleProduct: object | undefined;
   @Output() clickAddEvent: EventEmitter<string>;
   constructor(
     private _ApiProductsService: ApiProductsService,
-    private _ShoppingCardService: ShoppingCardService
+    private _ShoppingCardService: ShoppingCardService,
+    private _AuthService:AuthService
   ) {
     this.clickAddEvent = new EventEmitter<string>();
+    _AuthService.logedUserData.subscribe((data:any)=>{
+      this.theUserRole=data;
+      console.log("dataaaaaaa",data);
+      
+
+    });
   }
 
   ngOnChanges() {

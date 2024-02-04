@@ -47,6 +47,9 @@ export class AdminEditProComponent {
           console.log('getOneProduct-data', data);
       },
       error: (error: any) => {
+        //    if (error.error == "Not Found") {
+        // this._Router.navigate([`Not-Found`]);
+        // }
         console.log('getOneProduct-Error', error);
       },
       complete: () => {

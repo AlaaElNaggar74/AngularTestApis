@@ -268,7 +268,7 @@
       "quantity": 0,
       "categoryId": 2,
       "imagesUrl": "https://cdn.dummyjson.com/product-images/24/thumbnail.jpg",
-      "isSelected": false
+      "isSelected": true
     },
     {
       "id": "103",
@@ -276,6 +276,33 @@
       "price": 95,
       "quantity": 1,
       "categoryId": 3,
+      "imagesUrl": "https://cdn.dummyjson.com/product-images/8/1.jpg",
+      "isSelected": true
+    },
+    {
+      "id": "bca0",
+      "name": "Ahmed",
+      "price": 23,
+      "quantity": 3,
+      "categoryId": "2",
+      "imagesUrl": "https://fakeimg.pl/200x100/?retina=1&text=こんにちは&font=noto",
+      "isSelected": false
+    },
+    {
+      "id": "ad73",
+      "name": "AMAZON",
+      "price": 34,
+      "quantity": 2,
+      "categoryId": "4",
+      "imagesUrl": "https://cdn.dummyjson.com/product-images/8/1.jpg",
+      "isSelected": false
+    },
+    {
+      "id": "1181",
+      "name": "Moomo321",
+      "price": 321,
+      "quantity": 321,
+      "categoryId": "1",
       "imagesUrl": "https://cdn.dummyjson.com/product-images/8/1.jpg",
       "isSelected": false
     }

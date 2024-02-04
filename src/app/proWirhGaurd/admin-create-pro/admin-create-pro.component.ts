@@ -61,6 +61,20 @@ export class AdminCreateProComponent {
         console.log('createProduct-Complete');
       },
     });
+    // // Using Generic Services 
+    // this._ApiProductsService.createProductFromGene(NewProduct).subscribe({
+    //   next: (data: any) => {
+    //     console.log('createProduct-Data', data);
+    //     this._Router.navigate(['/service-gaurd/adminstable-gu']);
+
+    //   },
+    //   error: (error: any) => {
+    //     console.log('createProduct-ERROR', error);
+    //   },
+    //   complete: () => {
+    //     console.log('createProduct-Complete');
+    //   },
+    // });
 
     console.log('The New Data Is : ', NewProduct);
   }

@@ -6,9 +6,9 @@
     [(ngModel)]="categoryId"
     (change)="onSelectValuChang()"
   >
-    <option disabled selected value="0">Choose</option>
-    <option value="1">One-1</option>
-    <option value="2">Two-2</option>
-    <option value="3">Three-3</option>
+    <option selected value="0">All</option>
+    <option value="{{ cat.id }}" *ngFor="let cat of allCategory">
+      {{ cat.name }}
+    </option>
   </select>
 </h1>

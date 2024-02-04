@@ -12,12 +12,16 @@ export class ProductsGaurdComponent {
   parentSearchName: string = '';
   displayValue = 'ready we click to child of child ';
   products!: InterfaceProducts[];
+  productsClone!: InterfaceProducts[];
+  productsForAllSelected!: InterfaceProducts[];
   // /// // OR /// ///
   // products: InterfaceProducts[] | null =null;
   constructor(private _ApiProductsService: ApiProductsService) {
     _ApiProductsService.getAllProducts().subscribe({
       next: (data: any) => {
         this.products = data;
+        this.productsClone = data;
+        this.productsForAllSelected = data;
         // console.log('ProductsGaurdComponent-data', data);
       },
       error: (error: any) => {
@@ -53,6 +57,8 @@ export class ProductsGaurdComponent {
     let objSubSc = {
       next: (data: any) => {
         this.products = data;
+        this.productsClone = data;
+
         console.log('getProductsByCatId', data);
       },
       error: (error: any) => {
@@ -64,14 +70,39 @@ export class ProductsGaurdComponent {
     };
 
     this.parentSelectedCat = event;
-    this._ApiProductsService
-      .getProductsByCatId(this.parentSelectedCat)
-      .pipe()
-      .subscribe(objSubSc);
+    if (this.parentSelectedCat == 0) {
+      this.products = this.productsForAllSelected;
+    } else {
+      this._ApiProductsService
+        .getProductsByCatId(this.parentSelectedCat)
+        .pipe()
+        .subscribe(objSubSc);
+    }
   }
 
   getSearchNameFromChild(event: string) {
     this.parentSearchName = event;
+    if (event == ' ' || event == '') {
+      if (this.parentSelectedCat == 0) {
+        this.products = this.productsForAllSelected;
+        
+      }else{
+        this.products = this.productsClone;
+
+      }
+    }
+    // // When Use The Search Should Make Clone From Data And Make Filter On It
+    // // Every Click Should Make Filter On All Products Not Products Come From First Filter SO This Line
+    // //   this.products = this.products.filter((ele: InterfaceProducts) =>
+    // //   ele.name.includes(event.trim())
+    //// );  // // not work good
+    // // to Show Change Every Click On Screen
+    else {
+      this.products = this.productsClone.filter((ele: InterfaceProducts) =>
+        // ele.name.includes(event.trim())
+        ele.name.toLowerCase().includes(event.trim())
+      );
+    }
   }
   numberToArr(number: number) {
     return Array(number);
