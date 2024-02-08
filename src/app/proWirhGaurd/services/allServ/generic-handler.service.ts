@@ -47,16 +47,16 @@ export class GenericHandlerService {
       .get(`${UrlLink}`, this.httpOptions)
       .pipe(retry(3), catchError(this.handleError));
   }
-  addProductsUsingGeneric(UrlLink: any, obj: any): Observable<ApiResponseVm> {
+  addProductsUsingGeneric(UrlLink: any, obj: any) {
     // this.httpOptions.headers={
     //   Authorization: 'my-auth-token',
     // }
     this.setNewHeadersOption('Authorization', 'my-auth-token');
 
-    console.log(this.httpOptions);
+    // console.log(this.httpOptions);
 
     return this._HttpClient
-      .post<ApiResponseVm>(`${UrlLink}`, obj, this.httpOptions)
+      .post(`${UrlLink}`, obj, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
 }

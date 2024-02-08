@@ -1,0 +1,203 @@
+<h1 class="my-5 text-center text-danger">address-with-many-field works!</h1>
+
+<form
+  class="py-5"
+  [formGroup]="registerFromAddreess"
+  (ngSubmit)="onSubmitForm()"
+>
+  <div class="row">
+    <div class="col-md-6">
+      <div
+        class="p-3 bg-primary bg-opacity-50 rounded-3 border border-2 border-secondary"
+      >
+        <div class="mb-3">
+          <label class="form-label w-100"
+            ><span class="fw-bold"> First Name</span>
+            <input
+              type="text"
+              class="form-control mt-2"
+              id="fname"
+              formControlName="fname"
+              placeholder="Enter FirstName shouldent Have 'amazon' "
+              aria-describedby="fname"
+              (keyup)="checkkk()"
+            />
+          </label>
+          <!-- when using reactive form should use save navigate operators [ ? ] -->
+          <div
+            id="fname1"
+            class="form-text"
+            [hidden]="fname?.valid || fname?.untouched"
+          >
+            <p class="text-danger" *ngIf="fname?.errors?.['required']">
+              REQUIRED !!!!
+            </p>
+            <p class="text-danger" *ngIf="fname?.errors?.['min']">
+              Not Correct ... .... ...
+            </p>
+         
+          </div>
+          <p class="text-danger" *ngIf="custErrors.custName">
+            {{ custErrors.custName}}
+           </p>
+        </div>
+        <div class="mb-3">
+          <label class="form-label w-100"
+            ><span class="fw-bold mb-2"> Last Name</span>
+            <input
+              type="text"
+              class="form-control mt-2"
+              id="lname"
+              formControlName="lname"
+              placeholder="Enter LastName  . . ."
+              aria-describedby="lname"
+            />
+          </label>
+          <div
+            id="lname1"
+            class="form-text"
+            [hidden]="lname?.valid || lname?.untouched"
+          >
+            <p class="text-danger" *ngIf="lname?.errors?.['required']">
+              REQUIRED
+            </p>
+            <p class="text-danger" *ngIf="lname?.errors?.['minlength']">
+              requiredLength : {{lname?.errors?.['minlength'].requiredLength}}
+            </p>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label w-100"
+            ><span class="fw-bold mb-2"> Password</span>
+            <input
+              type="password"
+              name="password"
+              formControlName="password"
+              class="form-control mt-2"
+              placeholder="Enter Password  . . ."
+
+              id="exampleInputPassword1"
+            />
+          </label>
+          <div [hidden]="password?.valid || password?.untouched">
+            <p class="text-danger" *ngIf="password?.errors?.['required']">
+              required
+            </p>
+            <p class="text-danger" *ngIf="password?.errors?.['maxlength']">
+              requiredlength :
+              {{password?.errors?.['maxlength'].requiredLength}}
+            </p>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label w-100"
+            ><span class="fw-bold mb-2"> Confirm-Password</span>
+            <input
+              type="password"
+              name="conPassword"
+              formControlName="conPassword"
+              class="form-control mt-2"
+              placeholder="Enter conPassword  . . ."
+
+              id="conPassword"
+            />
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div
+        class="p-3 bg-primary-subtle rounded-3 border border-2 border-primary"
+      >
+        <p class="text-danger fw-bold mb-2">The Address Field :-</p>
+        <div class="addressContainer ps-5" formGroupName="address">
+          <div class="mb-3">
+            <label class="form-label w-100"
+              ><span class="fw-bold mb-2"> Country :</span>
+              <input
+                type="text"
+                class="form-control"
+                id="country"
+                name="country"
+                placeholder="Enter Country  . . ."
+
+                formControlName="country"
+                aria-describedby="country"
+              />
+            </label>
+            <div
+              id="country1"
+              class="form-text"
+              [hidden]="country?.valid || country?.untouched"
+            >
+              <p class="text-danger" *ngIf="country?.errors?.['required']">
+                REQUIRED !!!!
+              </p>
+              <p class="text-danger" *ngIf="country?.errors?.['pattern']">
+                requiredPattern should contain small capital letter
+              </p>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label w-100"
+              ><span class="fw-bold mb-2"> City :</span>
+              <input
+                type="text"
+                class="form-control"
+                id="city"
+                name="city"
+                placeholder="Enter City  . . ."
+
+                formControlName="city"
+                
+                aria-describedby="city"
+              />
+            </label>
+            <div
+              id="city1"
+              class="form-text"
+              [hidden]="city?.valid || city?.untouched"
+            >
+              <p class="text-danger" *ngIf="city?.errors?.['required']">
+                REQUIRED !!!!
+              </p>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label w-100"
+              ><span class="fw-bold mb-2"> Post-Code :</span>
+              <input
+                type="text"
+                class="form-control"
+                id="postcode"
+                name="postcode"
+                formControlName="postcode"
+                placeholder="Enter Post-Code  . . . "
+                aria-describedby="postcode"
+              />
+            </label>
+            <div
+              id="postcode1"
+              class="form-text"
+              [hidden]="postcode?.valid || postcode?.untouched"
+            >
+              <p class="text-danger" *ngIf="postcode?.errors?.['required']">
+                REQUIRED !!!!
+              </p>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <div class="bb text-center">
+          <button
+            type="submit"
+            [disabled]="registerFromAddreess.invalid"
+            class="btn btn-primary"
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

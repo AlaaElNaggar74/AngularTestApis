@@ -1,0 +1,202 @@
+<h1 class="my-5 text-center text-danger">Radiooooo-with-many-field works!</h1>
+
+<form class="py-5" [formGroup]="formRadio" (ngSubmit)="onFormRadioSub()">
+  <div class="row">
+    <div class="col-md-6">
+      <div
+        class="p-3 bg-primary bg-opacity-50 rounded-3 border border-2 border-secondary"
+      >
+        <!-- The First Name Field > > >  -->
+        <div class="mb-3">
+          <label class="form-label w-100"
+            ><span class="fw-bold"> First Name</span>
+            <input
+              type="text"
+              class="form-control mt-2"
+              id="fname"
+              name="fname"
+              formControlName="fname"
+              placeholder="Enter Your First Name ."
+              aria-describedby="fname"
+            />
+          </label>
+          <div
+            id="fname1"
+            class="form-text"
+            [hidden]="fname?.valid || fname?.untouched"
+          >
+            <p class="text-danger" *ngIf="fname?.errors?.['required']">
+              REQUIRED !!!!
+            </p>
+          </div>
+        </div>
+
+        <!-- The Last Name Field .. ... . -->
+        <div class="mb-3">
+          <label class="form-label w-100"
+            ><span class="fw-bold mb-2"> Last Name</span>
+            <input
+              type="text"
+              class="form-control mt-2"
+              id="lname"
+              name="lname"
+              formControlName="lname"
+              placeholder="Enter Your Last Name"
+              aria-describedby="lname"
+            />
+          </label>
+          <div
+            id="lname1"
+            class="form-text"
+            [hidden]="lname?.valid || lname?.untouched"
+          >
+            <p class="text-danger" *ngIf="lname?.errors?.['required']">
+              REQUIRED !!!!
+            </p>
+          </div>
+        </div>
+
+        <!-- The Password Field -->
+        <div class="mb-3">
+          <label class="form-label w-100"
+            ><span class="fw-bold mb-2"> Password</span>
+            <input
+              type="password"
+              name="password"
+              formControlName="password"
+              placeholder="Enter Your Password"
+              class="form-control mt-2"
+              id="exampleInputPassword1"
+            />
+          </label>
+          <div [hidden]="password?.valid || password?.untouched">
+            <p class="text-danger" *ngIf="password?.errors?.['required']">
+              REQUIREDD !! !!!! !!!!
+            </p>
+          </div>
+        </div>
+
+        <!-- The Confirm-Password Field -->
+        <div class="mb-3">
+          <label class="form-label w-100"
+            ><span class="fw-bold mb-2"> Confirm-Password</span>
+            <input
+              type="password"
+              name="conPassword"
+              formControlName="conPassword"
+              placeholder="Enter Your Confirm Password"
+              class="form-control mt-2"
+              id="confirmPassw"
+            />
+          </label>
+          <div [hidden]="conPassword?.valid || conPassword?.untouched">
+            <p class="text-danger" *ngIf="conPassword?.errors?.['required']">
+              REQUIREDDDD !! !@!!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div
+        class="p-3 bg-warning bg-opacity-50 rounded-3 border border-2 border-primary"
+      >
+        <p class="text-danger fw-bold mb-2 text-center">The Radio Field :-</p>
+        <p class="text-danger fw-bold mb-2">
+          Chosse Only One Track :-
+          <span class="text-danger ps-2" *ngIf="track?.errors?.['required']">
+            *
+          </span>
+        </p>
+        <div class="radioContainer ps-2">
+          <div class="tracksItems d-flex align-items-center">
+            <div class="container">
+              <div class="pane">
+                <!-- Radio Php  -->
+                <label class="label">
+                  <span>PHP</span>
+                  <input
+                    id="left"
+                    class="input"
+                    (change)="onRadioChange($event)"
+                    formControlName="track"
+                    name="track"
+                    type="radio"
+                    value="php"
+                  />
+                </label>
+
+                <!-- Radio Python -->
+                <label class="label">
+                  <span>Python</span>
+                  <input
+                    id="middle"
+                    class="input"
+                    name="track"
+                    formControlName="track"
+                    type="radio"
+                    value="python"
+                    (change)="onRadioChange($event)"
+                  />
+                </label>
+
+                <!-- Radio Other -->
+                <label class="label">
+                  <span>Other</span>
+                  <input
+                    id="right"
+                    class="input"
+                    name="track"
+                    formControlName="track"
+                    type="radio"
+                    value="other"
+                    (change)="onRadioChange($event)"
+                  />
+                </label>
+
+                <span class="selection"></span>
+              </div>
+              <!-- track Required Errors  -->
+              <!-- <div [hidden]="track?.valid || track?.untouched"> -->
+
+              <!-- </div> -->
+            </div>
+          </div>
+
+          <div class="mb-3 mt-3" *ngIf="track?.value == 'other'">
+            <label class="form-label w-100"
+              ><span class="fw-bold"> The Other Track Name : </span>
+              <input
+                type="text"
+                class="form-control mt-2"
+                id="otherTrack"
+                name="otherTrack"
+                formControlName="otherTrack"
+                placeholder="Enter Your Own Track Name ."
+                aria-describedby="otherTrack"
+              />
+            </label>
+          </div>
+
+          <!-- otherTrack Required Errors  -->
+          <div [hidden]="otherTrack?.valid || otherTrack?.untouched">
+            <p *ngIf="otherTrack?.errors?.['required']">
+              requiredddd !!! !!!!! !!!
+            </p>
+          </div>
+        </div>
+
+        <hr />
+        <div class="bb text-center">
+          <button
+            type="submit"
+            [disabled]="formRadio.invalid"
+            class="btn btn-primary"
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

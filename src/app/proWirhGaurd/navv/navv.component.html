@@ -30,6 +30,7 @@
             >products</a
           >
         </li>
+
         <li class="nav-item">
           <a class="nav-link" routerLink="categaurd" routerLinkActive="active"
             >categories</a
@@ -106,10 +107,76 @@
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
+            Forms Type
+          </a>
+          <ul class="dropdown-menu">
+            <li
+              class="formTypes nav-item ps-3 py-2 mx-1 my-2 bg-success text-white"
+              [routerLink]="['template-forms']"
+            >
+              Template Driven Form
+            </li>
+            <li
+              class="formTypes nav-item ps-3 py-2 mx-1 my-2 bg-success text-white"
+              [routerLink]="['reactive-form']"
+            >
+              Reactive Form
+            </li>
+            <li
+              class="formTypes nav-item ps-3 py-2 mx-1 my-2 bg-success text-white"
+              [routerLink]="['address-field']"
+            >
+              address-field
+            </li>
+            <!-- address-field
+check-box
+radio-box
+mobile-multi-value -->
+            <li
+              class="formTypes nav-item ps-3 py-2 mx-1 my-2 bg-success text-white"
+              [routerLink]="['check-box']"
+            >
+              check-box
+            </li>
+            <li
+              class="formTypes nav-item ps-3 py-2 mx-1 my-2 bg-success text-white"
+              [routerLink]="['radio-box']"
+            >
+              radio-box
+            </li>
+            <li
+              class="formTypes nav-item ps-3 py-2 mx-1 my-2 bg-success text-white"
+              [routerLink]="['mobile-multi-value']"
+            >
+              mobile-multi-value
+            </li>
+            <li
+              class="formTypes nav-item ps-3 py-2 mx-1 my-2 bg-success text-white"
+              [routerLink]="['confirm-password']"
+            >
+              confirm-password
+            </li>
+            <li
+              class="formTypes nav-item ps-3 py-2 mx-1 my-2 bg-success text-white"
+              [routerLink]="['custom-validators']"
+            >
+              custom-validators
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown" *ngIf="isLogged">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
             Wellcome {{ userData.name }}
           </a>
           <ul class="dropdown-menu">
-            <li class="nav-item  ps-3 py-2 mx-1 my-2 bg-info text-white">
+            <li class="nav-item ps-3 py-2 mx-1 my-2 bg-info text-white">
               <a
                 class="text-decoration-none text-white"
                 routerLink="loogaurd"
@@ -119,8 +186,12 @@
                 {{ isLogged ? "LogOut" : "Login" }}
               </a>
             </li>
-            <li class="nav-item  ps-3 py-2 mx-1 my-2 bg-info text-white">
-              <a class="text-decoration-none text-white" routerLink="loogaurd" routerLinkActive="active">
+            <li class="nav-item ps-3 py-2 mx-1 my-2 bg-info text-white">
+              <a
+                class="text-decoration-none text-white"
+                routerLink="loogaurd"
+                routerLinkActive="active"
+              >
                 userProfile
               </a>
             </li>

@@ -1,0 +1,478 @@
+<div class="templateDrivenForm py-4">
+  <h1 class="text-center my-3">Reactive Form</h1>
+  <div class="forTest">
+    <h1>fname Class :</h1>
+  </div>
+  <div class="">
+    <form
+      [formGroup]="formRegister"
+      class=""
+      (submit)="formSubmitUsing_NgModel()"
+    >
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <div
+            class="left px-3 py-5 rounded rounded-4 border border-1 border-black bg-danger bg-opacity-50"
+          >
+            <div class="mb-3">
+              <label class="form-label w-100"
+                ><span class="fw-bold">First Name : </span>
+                <input
+                  type="text"
+                  class="form-control mt-2"
+                  name="fname"
+                  formControlName="fname"
+                  placeholder="Enter First Name Please"
+                  aria-describedby="fnamelHelp"
+                />
+              </label>
+              <div
+                id="emailHelp"
+                class="form-text text-success bg-dark-subtle"
+                [hidden]="fname?.valid || fname?.untouched"
+              >
+                <p *ngIf="fname?.errors?.['required']">The Fname Is Required</p>
+                <p *ngIf="fname?.errors?.['pattern']">
+                  The Fname Is Less Than 3 character
+                </p>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label w-100"
+                ><span class="fw-bold">Last Name : </span>
+                <input
+                  type="text"
+                  class="form-control mt-2"
+                  name="lname"
+                  formControlName="lname"
+                  placeholder="Enter Last Name Please"
+                  aria-describedby="lnamelHelp"
+                />
+              </label>
+              <!-- <div
+            id="emailHelp"
+            class="form-text bg-body-secondary"
+            [hidden]="lname.valid || lname.untouched"
+          >
+            <p
+              class="text-bg-light mb-0 pb-0"
+              *ngIf="lname.errors?.['required']"
+            >
+              the Last Name Is Required
+            </p>
+            <p
+              class="text-bg-light mb-0 pb-0"
+              *ngIf="lname.errors?.['pattern']"
+            >
+              the Last Name Length Should Less Than 4
+            </p>
+          </div> -->
+            </div>
+            <div class="mb-3">
+              <label class="form-label w-100">
+                <span class="fw-bold">Email address : </span>
+
+                <input
+                  type="email"
+                  class="form-control mt-2"
+                  name="email"
+                  formControlName="email"
+                  placeholder="Enter Email address Please"
+                  aria-describedby="emailHelp"
+                />
+              </label>
+              <!-- <div
+            id="emailHelp"
+            class="form-text bg-body-secondary"
+            [hidden]="email.valid || email.untouched"
+          >
+            <p *ngIf="email.errors?.['required']">the email is required</p>
+            <p *ngIf="email.errors?.['pattern']">the email is Is Not Correct</p>
+          </div> -->
+            </div>
+            <div class="mb-3">
+              <label class="form-label w-100"
+                ><span class="fw-bold"> Mobile Number : </span>
+                <input
+                  type="tel"
+                  class="form-control mt-2"
+                  name="mobile"
+                  formControlName="mobile"
+                  placeholder="Enter Mobile Number Please"
+                  aria-describedby="phonlHelp"
+                />
+              </label>
+              <!-- <div
+            id="emailHelp"
+            class="form-text bg-body-secondary"
+            [hidden]="mobile.valid || mobile.untouched"
+          >
+            <p *ngIf="mobile.errors?.['required']">the mobile is required</p>
+            <p *ngIf="mobile.errors?.['pattern']">the mobile is pattern</p>
+          </div> -->
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label w-100">
+                <span class="fw-bold"> The Salary :</span>
+                <input
+                  type="number"
+                  class="form-control mt-2"
+                  name="salary"
+                  formControlName="salary"
+                  placeholder="Enter The Salary Please"
+                  aria-describedby="salaryHelp"
+                />
+              </label>
+              <!-- <div
+            id="emailHelp"
+            class="form-text bg-body-secondary"
+            [hidden]="salary.valid || salary.untouched"
+          >
+            <p *ngIf="salary.errors?.['required']">the salary is required</p>
+            <p *ngIf="salary.errors?.['min']">the salary is min should 3</p>
+            <p *ngIf="salary.errors?.['max']">the salary is max should 11</p>
+          </div> -->
+            </div>
+            <div class="mb-3 w-100">
+              <label class="form-label w-100">
+                <span class="fw-bold"> Password </span>
+                <input
+                  type="password"
+                  name="password"
+                  formControlName="password"
+                  placeholder="Enter Password Please"
+                  class="form-control mt-2 w-100"
+                />
+              </label>
+              <!-- <div
+            id="emailHelp"
+            class="form-text text-bg-secondary"
+            [hidden]="password.valid || password.untouched"
+          >
+            <p *ngIf="password.errors?.['required']">The Password Is Required</p>
+            <p *ngIf="password.errors?.['minlength']">The Password milength is 3</p>
+          </div> -->
+            </div>
+            <div class="mb-3 w-100">
+              <label class="form-label w-100">
+                <span class="fw-bold">Confirm-Password </span>
+                <input
+                  type="password"
+                  name="confirmPassword"
+                  formControlName="confirmPassword"
+                  placeholder="Enter Confirm-Password Please"
+                  class="form-control mt-2 w-100"
+                />
+              </label>
+              <!-- <div id="emailHelp" class="form-text">
+                We'll never share your email with anyone else.
+              </div> -->
+            </div>
+            <!-- <button type="submit" [disabled]="formRegister.invalid" class="btn btn-primary">Submit</button> -->
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-3 mb-md-0">
+          <div
+            class="right border border-1 border-black bg-body-tertiary p-3 rounded-2"
+          >
+            <div
+              class="mb-3 p-2 rounded-3 bg-black bg-opacity-25"
+              formArrayName="MultiMobile"
+            >
+              <div class="form-label w-100">
+                <span class="fw-bold"> Multi-Mobile : </span>
+              </div>
+              <div
+                class="d-flex align-items-center"
+                *ngFor="let num of MultiMobile.controls; index as index"
+                data-in="index"
+              >
+                <input
+                  type="tel"
+                  class="form-control mt-2"
+                  name="MultiMobile{{ index }}"
+                  id="input{{ index }}"
+                  #inpttt
+                  formControlName="{{ index }}"
+                  placeholder="Enter Mobile Number {{ index + 1 }} Please"
+                  aria-describedby="phonlHelp"
+                />
+
+                <!--
+             For most browsers the default type of button is [ submit ].
+  
+            if write button inside form when you click on this button 
+            will act as submit as 
+  
+            SO
+            should identify the type of any button inside the form
+            like in Button Of Add 
+  
+          -->
+
+                <button
+                  type="button"
+                  class="btn btn-success ms-2 mt-2"
+                  id="{{ index }}"
+                  (click)="addNewNumber($event, inpttt)"
+                >
+                  Add
+                </button>
+              </div>
+
+              <!-- <div
+            id="emailHelp"
+            class="form-text bg-body-secondary"
+            [hidden]="mobile.valid || mobile.untouched"
+          >
+            <p *ngIf="mobile.errors?.['required']">the mobile is required</p>
+            <p *ngIf="mobile.errors?.['pattern']">the mobile is pattern</p>
+          </div> -->
+            </div>
+            <div
+              class="div p-2 rounded-3 bg-primary bg-opacity-25"
+              formGroupName="address"
+            >
+              <h4 class="fw-bold">Address</h4>
+              <div class="mb-3 w-100 ps-3">
+                <label class="form-label w-100">
+                  <span class="fw-bold"> city </span>
+                  <input
+                    type="text"
+                    name="city"
+                    formControlName="city"
+                    placeholder="Enter city Please"
+                    class="form-control mt-2 w-100"
+                  />
+                </label>
+                <div
+                  id="emailHelp"
+                  class="form-text text-bg-secondary"
+                  [hidden]="city?.valid || city?.untouched"
+                >
+                  <p *ngIf="city?.errors?.['required']">The city Is Required</p>
+                  <p *ngIf="city?.errors?.['minlength']">
+                    The city milength is 3
+                  </p>
+                </div>
+              </div>
+              <div class="mb-3 w-100 ps-3">
+                <label class="form-label w-100">
+                  <span class="fw-bold"> country </span>
+                  <input
+                    type="text"
+                    required
+                    name="country"
+                    formControlName="country"
+                    placeholder="Enter country Please"
+                    class="form-control mt-2 w-100"
+                  />
+                </label>
+                <!-- <div
+          id="emailHelp"
+          class="form-text text-bg-secondary"
+          [hidden]="password.valid || password.untouched"
+        >
+          <p *ngIf="password.errors?.['required']">The Password Is Required</p>
+          <p *ngIf="password.errors?.['minlength']">The Password milength is 3</p>
+        </div> -->
+              </div>
+              <div class="mb-3 w-100 ps-3">
+                <label class="form-label w-100">
+                  <span class="fw-bold"> postCode </span>
+                  <input
+                    type="number"
+                    name="postCode"
+                    formControlName="postCode"
+                    placeholder="Enter postCode Please"
+                    class="form-control mt-2 w-100"
+                  />
+                </label>
+                <!-- <div
+          id="emailHelp"
+          class="form-text text-bg-secondary"
+          [hidden]="password.valid || password.untouched"
+        >
+          <p *ngIf="password.errors?.['required']">The Password Is Required</p>
+          <p *ngIf="password.errors?.['minlength']">The Password milength is 3</p>
+        </div> -->
+              </div>
+            </div>
+
+            <div class="mb-3 bg-success bg-opacity-50 p-2 rounded-3 my-2">
+              <label class="form-label w-100">
+                <span class="fw-bold"> Image :</span>
+                <input
+                  type="file"
+                  class="form-control mt-2"
+                  name="image"
+                  formControlName="image"
+                  placeholder="Enter image Please"
+                  aria-describedby="salaryHelp"
+                />
+              </label>
+              <!-- <div id="emailHelp" class="form-text">
+                We'll never share your email with anyone else.
+              </div> -->
+            </div>
+            <div class="mb-3 bg-warning bg-opacity-50 p-2 rounded-3 my-2">
+              <label class="form-label w-100">
+                <span class="fw-bold">How Reach For Us :</span>
+              </label>
+              <div class="radd">
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label" for="inlineRadio1">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="referral"
+                      formControlName="referral"
+                      id="inlineRadio1"
+                      value="FaceBook"
+                      (change)="updateReferralOtherValidat()"
+                    />
+                    FaceBook</label
+                  >
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label" for="inlineRadio2"
+                    ><input
+                      class="form-check-input"
+                      type="radio"
+                      name="referral"
+                      formControlName="referral"
+                      id="inlineRadio2"
+                      value="Twitter"
+                      (change)="updateReferralOtherValidat()"
+                    />
+                    Twitter</label
+                  >
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="referral"
+                      formControlName="referral"
+                      id="inlineRadio3"
+                      value="Other"
+                      (change)="updateReferralOtherValidat()"
+                    />
+                    Other</label
+                  >
+                </div>
+              </div>
+              <div
+                class="my-3 p-3 rounded rounded-3 bg-body-secondary bg-opacity-50"
+                *ngIf="referral?.value == 'Other'"
+              >
+                <label class="form-label w-100"
+                  ><span class="fw-bold">The Media Is : </span>
+                  <input
+                    type="text"
+                    class="form-control mt-2"
+                    name="otherRef"
+                    formControlName="otherReferral"
+                    placeholder="Enter Other Refer Please"
+                    aria-describedby="otherlHelp"
+                  />
+                </label>
+                <!-- <div
+              id="emailHelp"
+              class="form-text text-success bg-dark-subtle"
+              [hidden]="fname?.valid || fname?.untouched"
+            >
+              <p *ngIf="fname?.errors?.['required']">The Fname Is Required</p>
+              <p *ngIf="fname?.errors?.['pattern']">
+                The Fname Is Less Than 3 character
+              </p>
+            </div> -->
+              </div>
+              <!-- <div id="emailHelp" class="form-text">
+                We'll never share your email with anyone else.
+              </div> -->
+            </div>
+            <div class="mb-3 bg-info bg-opacity-50 p-2 rounded-3 my-2">
+              <label class="form-label w-100">
+                <span class="fw-bold">Chosse More Than One :</span>
+              </label>
+              <div
+                class="checckkkk d-flex align-items-center"
+                
+              >
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input
+                      type="checkbox"
+                      class="form-check-input"
+                      id="0react"
+                      name="react"
+                      value="react"
+                      (change)="setSkillsValues($event)"
+                    />
+                    <span>React</span></label
+                  >
+                </div>
+                <div class="form-check mx-3">
+                  <label class="form-check-label">
+                    <input
+                      type="checkbox"
+                      class="form-check-input"
+                      id="1angular"
+                      name="angular"
+                      value="angular"
+                      (change)="setSkillsValues($event)"
+                    />
+                    <span>Angular</span></label
+                  >
+                </div>
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input
+                      type="checkbox"
+                      class="form-check-input"
+                      id="2vue"
+                      name="vue"
+                      value="vue"
+                      (change)="setSkillsValues($event)"
+                    />
+                    <span>Vue</span></label
+                  >
+                </div>
+              </div>
+
+              <!-- <div id="emailHelp" class="form-text">
+                We'll never share your email with anyone else.
+              </div> -->
+            </div>
+            <div
+              class="mb-3 form-check p-2 my-2 rounded-2 bg-success bg-opacity-25"
+            >
+              <div>
+                <label class="form-check-label">
+                  <input
+                    type="checkbox"
+                    class="form-check-input ms-0"
+                    name="rememberMe"
+                    formControlName="rememberMe"
+                  />
+                  <span class="fw-bold ms-2">Remember Me</span></label
+                >
+              </div>
+            </div>
+            <button
+              type="submit"
+              [disabled]="formRegister.invalid"
+              class="btn btn-primary"
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

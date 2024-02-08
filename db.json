@@ -51,9 +51,7 @@
       "category": "smartphones",
       "thumbnail": "https://cdn.dummyjson.com/product-images/3/thumbnail.jpg",
       "isSelected": false,
-      "images": [
-        "https://cdn.dummyjson.com/product-images/3/1.jpg"
-      ]
+      "images": ["https://cdn.dummyjson.com/product-images/3/1.jpg"]
     },
     {
       "id": "4",
@@ -246,9 +244,7 @@
       "category": "smartphones",
       "thumbnail": "https://cdn.dummyjson.com/product-images/3/thumbnail.jpg",
       "isSelected": false,
-      "images": [
-        "https://cdn.dummyjson.com/product-images/3/1.jpg"
-      ]
+      "images": ["https://cdn.dummyjson.com/product-images/3/1.jpg"]
     }
   ],
   "Iti-Products": [
@@ -323,6 +319,278 @@
     {
       "id": "4",
       "name": "Drama"
+    }
+  ],
+  "templateForms": [
+    {
+      "id": "9443",
+      "fname": "",
+      "lname": "",
+      "email": "",
+      "mobile": "",
+      "salary": "",
+      "password": "",
+      "confirmPassword": "",
+      "image": "",
+      "checkboxInput": ""
+    },
+    {
+      "id": "b6b5",
+      "fname": "Alaa",
+      "lname": "Moham",
+      "email": "elnaggar589@gmail.com",
+      "mobile": "01141508472",
+      "salary": 5,
+      "password": "gfgf",
+      "confirmPassword": "gfgfg",
+      "image": "C:\\fakepath\\black_sunglasses.jpg",
+      "checkboxInput": true
+    },
+    {
+      "id": "ebe1",
+      "fname": "Alaatt",
+      "lname": "Moham",
+      "email": "elnaggar589@gmail.com",
+      "mobile": "01141555555",
+      "salary": 7,
+      "password": "ytytyty",
+      "confirmPassword": "ytytytyty",
+      "image": "C:\\fakepath\\black-nikon-dslr-camera.jpg",
+      "checkboxInput": true
+    },
+    {
+      "id": "4c11",
+      "fname": "",
+      "lname": "",
+      "email": "",
+      "mobile": "",
+      "salary": "",
+      "password": "",
+      "confirmPassword": "",
+      "image": "",
+      "checkboxInput": ""
+    }
+  ],
+  "reactiveForms": [
+    {
+      "id": "c7af",
+      "fname": "Alaa",
+      "lname": "Mohammed",
+      "mobile": "+201141508472",
+      "MultiMobile": ["141"],
+      "address": {
+        "city": "Giza",
+        "country": "Egypt",
+        "postCode": 3387722
+      },
+      "email": "",
+      "salary": "",
+      "password": "",
+      "confirmPassword": "",
+      "rememberMe": false,
+      "skills": ["react", "angular", "vue"],
+      "image": "",
+      "referral": "",
+      "otherReferral": ""
+    },
+    {
+      "id": "8639",
+      "fname": "Alaa",
+      "lname": "Mohammed",
+      "mobile": "+201141508472",
+      "MultiMobile": ["141"],
+      "address": {
+        "city": "Giza",
+        "country": "Egypt",
+        "postCode": 3387722
+      },
+      "email": "",
+      "salary": "",
+      "password": "",
+      "confirmPassword": "",
+      "rememberMe": false,
+      "skills": ["react", "angular"],
+      "image": "",
+      "referral": "",
+      "otherReferral": ""
+    },
+    {
+      "id": "9d2d",
+      "fname": "Alaa",
+      "lname": "Mohammed",
+      "mobile": "+201141508472",
+      "MultiMobile": ["141"],
+      "address": {
+        "city": "Giza",
+        "country": "Egypt",
+        "postCode": 3387722
+      },
+      "email": "",
+      "salary": "",
+      "password": "",
+      "confirmPassword": "",
+      "rememberMe": false,
+      "skills": ["react"],
+      "image": "",
+      "referral": "",
+      "otherReferral": ""
+    },
+    {
+      "id": "d81d",
+      "fname": "Alaa",
+      "lname": "Mohammed",
+      "mobile": "+201141508472",
+      "MultiMobile": ["141"],
+      "address": {
+        "city": "Giza",
+        "country": "Egypt",
+        "postCode": 3387722
+      },
+      "email": "",
+      "salary": "",
+      "password": "",
+      "confirmPassword": "",
+      "rememberMe": false,
+      "skills": ["react"],
+      "image": "",
+      "referral": "",
+      "otherReferral": ""
+    },
+    {
+      "id": "2d4d",
+      "fname": "Alaa",
+      "lname": "Mohammed",
+      "mobile": "+201141508472",
+      "MultiMobile": ["1025"],
+      "address": {
+        "city": "Giza",
+        "country": "Egypt",
+        "postCode": 3387722
+      },
+      "email": "",
+      "salary": "",
+      "password": "",
+      "confirmPassword": "",
+      "rememberMe": false,
+      "skills": ["react", "angular", "vue"],
+      "image": "",
+      "referral": "",
+      "otherReferral": ""
+    },
+    {
+      "id": "f7c9",
+      "fname": "Alaa",
+      "lname": "Mohammed",
+      "mobile": "+201141508472",
+      "MultiMobile": ["1025"],
+      "address": {
+        "city": "Giza",
+        "country": "Egypt",
+        "postCode": 3387722
+      },
+      "email": "",
+      "salary": "",
+      "password": "",
+      "confirmPassword": "",
+      "rememberMe": false,
+      "skills": ["react", "angular"],
+      "image": "",
+      "referral": "",
+      "otherReferral": ""
+    },
+    {
+      "id": "097d",
+      "fname": "Alaa",
+      "lname": "Mohammed",
+      "mobile": "+201141508472",
+      "MultiMobile": ["1025"],
+      "address": {
+        "city": "Giza",
+        "country": "Egypt",
+        "postCode": 3387722
+      },
+      "email": "",
+      "salary": "",
+      "password": "",
+      "confirmPassword": "",
+      "rememberMe": false,
+      "skills": ["react"],
+      "image": "",
+      "referral": "",
+      "otherReferral": ""
+    },
+    {
+      "id": "5ab9",
+      "fname": "Alaa",
+      "lname": "Mohammed",
+      "mobile": "+201141508472",
+      "MultiMobile": ["1025"],
+      "address": {
+        "city": "Giza",
+        "country": "Egypt",
+        "postCode": 3387722
+      },
+      "email": "",
+      "salary": "",
+      "password": "",
+      "confirmPassword": "",
+      "rememberMe": false,
+      "skills": [""],
+      "image": "",
+      "referral": "",
+      "otherReferral": ""
+    },
+    {
+      "id": "89db",
+      "fname": "Alaa",
+      "lname": "Mohammed",
+      "mobile": "+201141508472",
+      "MultiMobile": ["01141508472"],
+      "address": {
+        "city": "Giza",
+        "country": "Egypt",
+        "postCode": 3387722
+      },
+      "email": "elnaggar589@gmail.com",
+      "salary": "",
+      "password": "",
+      "confirmPassword": "",
+      "rememberMe": false,
+      "skills": [""],
+      "image": "",
+      "referral": "Twitter",
+      "otherReferral": ""
+    },
+    {
+      "id": "3e10",
+      "fname": "Alaa",
+      "lname": "Mohammed",
+      "mobile": "+201141508472",
+      "MultiMobile": [""],
+      "address": {
+        "city": "Giza",
+        "country": "Egypt",
+        "postCode": 3387722
+      },
+      "email": "",
+      "salary": "",
+      "password": "",
+      "confirmPassword": "",
+      "rememberMe": false,
+      "skills": [],
+      "image": "",
+      "referral": "",
+      "otherReferral": ""
+    }
+  ],
+  "testAsyncValidation": [
+    {
+      "email": [
+        "alaa1@gmai.com",
+        "alaa2@gmali.com",
+        "alaa3@gmail.com",
+        "alaa4@gmail.com"
+      ]
     }
   ]
 }

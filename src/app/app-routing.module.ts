@@ -64,6 +64,14 @@ import { adminGaurdGuard } from './proWirhGaurd/services/gaurd/admin-gaurd.guard
 import { AdminCreateProComponent } from './proWirhGaurd/admin-create-pro/admin-create-pro.component';
 import { AdminEditProComponent } from './proWirhGaurd/admin-edit-pro/admin-edit-pro.component';
 import { AdminViewDetailsProComponent } from './proWirhGaurd/admin-view-details-pro/admin-view-details-pro.component';
+import { TemplatefromComponent } from './proWirhGaurd/formsType/tempateForms/templatefrom/templatefrom.component';
+import { ReactiveFormComponent } from './proWirhGaurd/formsType/reactiveForm/reactive-form/reactive-form.component';
+import { AddressWithManyFieldComponent } from './proWirhGaurd/formsType/address-with-many-field/address-with-many-field.component';
+import { ManyCheckBoxsComponent } from './proWirhGaurd/formsType/many-check-boxs/many-check-boxs.component';
+import { RadioBoxComponent } from './proWirhGaurd/formsType/radio-box/radio-box.component';
+import { MultiMobileComponent } from './proWirhGaurd/formsType/multi-mobile/multi-mobile.component';
+import { ConfirPasswordComponent } from './proWirhGaurd/formsType/confir-password/confir-password.component';
+import { TestCustomValidateComponent } from './proWirhGaurd/formsType/test-custom-validate/test-custom-validate.component';
 
 const routes: Routes = [
   {
@@ -258,6 +266,42 @@ const routes: Routes = [
             title: 'products-gaurd',
             component: ProductsGaurdComponent,
           },
+          {
+            path: 'template-forms',
+            title: 'Template-Forms',
+            component: TemplatefromComponent,
+          },
+          {
+            path: 'address-field',
+            title: 'Address-as-form-group',
+            component: AddressWithManyFieldComponent,
+          },
+          {
+            path: 'check-box',
+            title: 'check-box',
+            component: ManyCheckBoxsComponent,
+          },
+          {
+            path: 'radio-box',
+            title: 'radio-box',
+            component: RadioBoxComponent,
+          },
+          {
+            path: 'mobile-multi-value',
+            title: 'mobile-multi-value',
+            component: MultiMobileComponent,
+          },
+          {
+            path: 'confirm-password',
+            title: 'confirm-password',
+            component: ConfirPasswordComponent,
+          },
+          {
+            path: 'custom-validators',
+            title: 'custom-validators',
+            component: TestCustomValidateComponent,
+          },
+         
           {
             path: 'prosgaurd/create',
             title: 'admins-create-gaurd',

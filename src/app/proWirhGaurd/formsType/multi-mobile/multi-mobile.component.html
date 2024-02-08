@@ -1,0 +1,175 @@
+<h1 class="my-5 text-center text-danger">
+  form-Multi-Phones-with-many-field works!
+</h1>
+
+<form
+  class="py-5"
+  [formGroup]="formMultiPhones"
+  (ngSubmit)="onFromMutliPhoneSub()"
+>
+  <div class="row">
+    <div class="col-md-6">
+      <div
+        class="p-3 bg-primary bg-opacity-50 rounded-3 border border-2 border-secondary"
+      >
+        <!-- First Name Input Field  -->
+        <div class="mb-3">
+          <label class="form-label w-100"
+            ><span class="fw-bold"
+              >First Name
+              <span class="fw-bold text-danger" *ngIf="fname?.invalid"
+                >*</span
+              ></span
+            >
+            <input
+              type="text"
+              class="form-control mt-2"
+              id="fname"
+              name="lname"
+              formControlName="fname"
+              placeholder="Enter Your First Name"
+              aria-describedby="fname"
+            />
+          </label>
+          <div
+            id="fname1"
+            class="form-text"
+            [hidden]="fname?.valid || fname?.untouched"
+          >
+            <p class="text-danger" *ngIf="fname?.errors?.['required']">
+              REQUIRED !!!!
+            </p>
+          </div>
+        </div>
+
+        <!-- Last Name Input Field -->
+        <div class="mb-3">
+          <label class="form-label w-100"
+            ><span class="fw-bold mb-2">Last Name <span class="text-danger fw-bold" *ngIf="lname?.invalid">*</span> </span>
+            <input
+              type="text"
+              class="form-control mt-2"
+              id="lname"
+              name="lname"
+              formControlName="lname"
+              placeholder="Enter Your Last Name"
+              aria-describedby="lname"
+            />
+          </label>
+          <div
+            id="lname1"
+            class="form-text"
+            [hidden]="lname?.valid || lname?.untouched"
+          >
+            <p class="text-danger" *ngIf="lname?.errors?.['rquired']">
+              REQUIRED !!!!
+            </p>
+          </div>
+        </div>
+
+        <!-- Password Input Field -->
+        <div class="mb-3">
+          <label class="form-label w-100"
+            ><span class="fw-bold mb-2">Password <span class="text-danger fw-bold" *ngIf="password?.invalid">*</span> </span>
+            <input
+              type="password"
+              class="form-control mt-2"
+              name="password"
+              formControlName="password"
+              placeholder="Enter Your Password Name"
+              id="exampleInputPassword1"
+            />
+          </label>
+          <div [hidden]="password?.valid || password?.untouched">
+            <p class="text-danger" *ngIf="password?.errors?.['required']">
+              REQUIREDD !! !!! !!!!
+            </p>
+          </div>
+        </div>
+
+        <!-- confirm Password Input Field -->
+        <div class="mb-3">
+          <label class="form-label w-100"
+            ><span class="fw-bold mb-2"> Confirm-Password <span class="text-danger fw-bold" *ngIf="conPassword?.invalid">*</span> </span>
+            <input
+              type="password"
+              class="form-control mt-2"
+              name="conPassword"
+              formControlName="conPassword"
+              placeholder="Enter Your Password Name"
+              id="confirmPassw"
+            />
+          </label>
+          <div
+            class="a"
+            [hidden]="conPassword?.valid || conPassword?.untouched"
+          >
+            <p class="text-danger" *ngIf="conPassword?.errors?.['required']">
+              REQUIREDD !! !!! !!!!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div
+        class="p-3 bg-danger bg-opacity-50 rounded-3 border border-2 border-primary"
+      >
+        <p class="text-danger fw-bold mb-2 text-center">
+          The Multi-Mobile Field :-
+        </p>
+        <p class="fw-bold mb-2">Your Numbers IS:</p>
+        <div class="addressContainer ps-2" formArrayName="multiPhoneNumbers">
+          <div
+            class="mb-3"
+            *ngFor="let phone of multiPhoneNumbers.controls; index as index"
+          >
+            <label class="form-label w-100 d-block d-flex align-items-center"
+              ><span class="fw-bold">{{ index + 1 }} - </span>
+              <input
+                type="text"
+                class="form-control ms-2 w-75"
+                id="{{ index }}"
+                name="{{ index }}"
+                data-name="{{ index }}"
+                #inputPhone
+                formControlName="{{ index }}"
+                placeholder="Enter Your Phone No.{{ index + 1 }}"
+                aria-describedby="phones"
+              />
+              <button
+                type="button"
+                class="btn btn-success ms-2 mb-0"
+                (click)="addNewNumber($event, inputPhone)"
+              >
+                +
+              </button>
+            </label>
+            <div
+              id="multivaluee"
+              class="form-text"
+              [hidden]="multiPhoneNumbers.valid || multiPhoneNumbers.untouched"
+            >
+              <p
+                class="text-danger"
+                *ngIf="multiPhoneNumbers?.errors?.['required']"
+              >
+                REQUIRED !!!!
+              </p>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <div class="bb text-center">
+          <button
+            type="submit"
+            [disabled]="formMultiPhones.invalid"
+            class="btn btn-primary"
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

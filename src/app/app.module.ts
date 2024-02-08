@@ -84,6 +84,15 @@ import { ProductListComponent } from './proWirhGaurd/products/product-list/produ
 import { SinglProductComponent } from './proWirhGaurd/products/singl-product/singl-product.component';
 import { CategorySelectComponent } from './proWirhGaurd/products/category-select/category-select.component';
 import { CategorySearchComponent } from './proWirhGaurd/products/category-search/category-search.component';
+import { TemplatefromComponent } from './proWirhGaurd/formsType/tempateForms/templatefrom/templatefrom.component';
+import { ReactiveFormComponent } from './proWirhGaurd/formsType/reactiveForm/reactive-form/reactive-form.component';
+import { GeneralformComponent } from './proWirhGaurd/formsType/generalform/generalform.component';
+import { MultiMobileComponent } from './proWirhGaurd/formsType/multi-mobile/multi-mobile.component';
+import { ManyCheckBoxsComponent } from './proWirhGaurd/formsType/many-check-boxs/many-check-boxs.component';
+import { RadioBoxComponent } from './proWirhGaurd/formsType/radio-box/radio-box.component';
+import { AddressWithManyFieldComponent } from './proWirhGaurd/formsType/address-with-many-field/address-with-many-field.component';
+import { ConfirPasswordComponent } from './proWirhGaurd/formsType/confir-password/confir-password.component';
+import { TestCustomValidateComponent } from './proWirhGaurd/formsType/test-custom-validate/test-custom-validate.component';
 
 @NgModule({
   declarations: [
@@ -161,6 +170,15 @@ import { CategorySearchComponent } from './proWirhGaurd/products/category-search
     SinglProductComponent,
     CategorySelectComponent,
     CategorySearchComponent,
+    TemplatefromComponent,
+    ReactiveFormComponent,
+    GeneralformComponent,
+    MultiMobileComponent,
+    ManyCheckBoxsComponent,
+    RadioBoxComponent,
+    AddressWithManyFieldComponent,
+    ConfirPasswordComponent,
+    TestCustomValidateComponent,
   ],
   imports: [
     BrowserModule,

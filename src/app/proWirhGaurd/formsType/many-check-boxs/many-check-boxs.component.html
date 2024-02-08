@@ -1,0 +1,250 @@
+<h1 class="my-5 text-center text-danger">Check box - with - many - field works!</h1>
+
+<form class="py-5" [formGroup]="fromChecking" (ngSubmit)="onFormCheckingSub()">
+  <div class="row">
+    <div class="col-md-6">
+      <div
+        class="p-3 bg-primary bg-opacity-50 rounded-3 border border-2 border-secondary"
+      >
+        <!-- FIRST NAME FIELD . .. ... ..  -->
+        <div class="mb-3">
+          <label class="form-label w-100"
+            ><span class="fw-bold"> First Name</span>
+            <input
+              type="text"
+              class="form-control mt-2"
+              id="fname"
+              name="fname"
+              formControlName="fname"
+              placeholder="Enter Your First Name"
+              aria-describedby="fname"
+            />
+          </label>
+          <div
+            id="fname1"
+            class="form-text"
+            [hidden]="fname?.valid || fname?.untouched"
+          >
+            <p class="text-danger" *ngIf="fname?.errors?.['required']">
+              REQUIRED !!!!
+            </p>
+          </div>
+        </div>
+
+        <!-- LAST NAME FIELD . .. ... ..  -->
+        <div class="mb-3">
+          <label class="form-label w-100"
+            ><span class="fw-bold mb-2"> Last Name</span>
+            <input
+              type="text"
+              class="form-control mt-2"
+              id="lname"
+              name="lname"
+              formControlName="lname"
+              placeholder="Enter Your Last Name"
+              aria-describedby="lname"
+            />
+          </label>
+          <div
+            id="lname1"
+            class="form-text"
+            [hidden]="lname?.valid || lname?.untouched"
+          >
+            <p class="text-danger" *ngIf="lname?.errors?.['required']">
+              REQUIRED !!!!
+            </p>
+          </div>
+        </div>
+
+        <!-- PASSWORD FIELD -->
+        <div class="mb-3">
+          <label class="form-label w-100"
+            ><span class="fw-bold mb-2"> Password</span>
+            <input
+              type="password"
+              class="form-control mt-2"
+              name="password"
+              formControlName="password"
+              placeholder="Enter Your Password"
+              id="exampleInputPassword1"
+            />
+          </label>
+          <div class="" [hidden]="password?.valid || password?.untouched">
+            <p class="text-danger" *ngIf="password?.errors?.['required']">
+              REQUIREDDDD !!!!!
+            </p>
+          </div>
+        </div>
+
+        <!-- CONFIM-PASSWORD FIELD -->
+        <div class="mb-3">
+          <label class="form-label w-100"
+            ><span class="fw-bold mb-2"> Confirm-Password</span>
+            <input
+              type="password"
+              class="form-control mt-2"
+              name="conPassword"
+              formControlName="conPassword"
+              placeholder="Enter Your Con-Password"
+              id="confirmPassw"
+            />
+          </label>
+          <div [hidden]="conPassword?.valid || conPassword?.untouched">
+            <p *ngIf="conPassword?.errors?.['required']">
+              requiredddd d d d d d !!!!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div
+        class="p-3 bg-black bg-opacity-25 rounded-3 border border-2 border-primary"
+      >
+        <p class="text-danger fw-bold text-center my-3">
+          The Check-Box Field :-
+        </p>
+        <p class="text-danger fw-bold mb-2 ps-4">Chosse Your Skills : -</p>
+        <div class="checkBoxContainer ps-5">
+          <div class="row">
+            <!-- first element -->
+            <div
+              class="checkbox-wrapper-23 col-md-6 mb-3 d-flex align-items-center"
+            >
+              <div class="inppp">
+                <input
+                  type="checkbox"
+                  id="check-angular"
+                  name="angular"
+                  value="angular"
+                  (change)="onCheckBoxChanges($event)"
+                />
+                <label for="check-angular" style="--size: 30px">
+                  <svg viewBox="0,0,50,50">
+                    <path d="M5 30 L 20 45 L 45 5"></path>
+                  </svg>
+                </label>
+              </div>
+              <h2 class="ms-2 fw-fold mb-0">Angular</h2>
+            </div>
+
+            <!-- second element -->
+            <div
+              class="checkbox-wrapper-23 col-md-6 mb-3 d-flex align-items-center"
+            >
+              <div class="inppp">
+                <input
+                  type="checkbox"
+                  id="0"
+                  name="react"
+                  value="react"
+                  (change)="onCheckBoxChanges($event)"
+                />
+                <label for="0" style="--size: 30px">
+                  <svg viewBox="0,0,50,50">
+                    <path d="M5 30 L 20 45 L 45 5"></path>
+                  </svg>
+                </label>
+              </div>
+              <h2 class="ms-2 fw-fold mb-0">React</h2>
+            </div>
+
+            <!-- third element -->
+            <div
+              class="checkbox-wrapper-23 col-md-6 mb-3 d-flex align-items-center"
+            >
+              <div class="inppp">
+                <input
+                  type="checkbox"
+                  id="check-vue"
+                  name="vue"
+                  value="vue"
+                  (change)="onCheckBoxChanges($event)"
+                />
+                <label for="check-vue" style="--size: 30px">
+                  <svg viewBox="0,0,50,50">
+                    <path d="M5 30 L 20 45 L 45 5"></path>
+                  </svg>
+                </label>
+              </div>
+              <h2 class="ms-2 fw-fold mb-0">Vue</h2>
+            </div>
+
+            <!-- four element -->
+            <div
+              class="checkbox-wrapper-23 col-md-6 mb-3 d-flex align-items-center"
+            >
+              <div class="inppp">
+                <input
+                  type="checkbox"
+                  id="check-laravel"
+                  name="laravel"
+                  value="laravel"
+                  (change)="onCheckBoxChanges($event)"
+                />
+                <label for="check-laravel" style="--size: 30px">
+                  <svg viewBox="0,0,50,50">
+                    <path d="M5 30 L 20 45 L 45 5"></path>
+                  </svg>
+                </label>
+              </div>
+              <h2 class="ms-2 fw-fold mb-0">Laravel</h2>
+            </div>
+
+            <!-- five element -->
+            <div
+              class="checkbox-wrapper-23 col-md-6 mb-3 d-flex align-items-center"
+            >
+              <div class="inppp">
+                <input
+                  type="checkbox"
+                  id="check-django"
+                  name="django"
+                  value="django"
+                  (change)="onCheckBoxChanges($event)"
+                />
+                <label for="check-django" style="--size: 30px">
+                  <svg viewBox="0,0,50,50">
+                    <path d="M5 30 L 20 45 L 45 5"></path>
+                  </svg>
+                </label>
+              </div>
+              <h2 class="ms-2 fw-fold mb-0">Django</h2>
+            </div>
+
+            <!-- six element -->
+            <div
+              class="checkbox-wrapper-23 col-md-6 mb-3 d-flex align-items-center"
+            >
+              <div class="inppp">
+                <input
+                  type="checkbox"
+                  id="check-net"
+                  name=".net"
+                  value=".net"
+                  (change)="onCheckBoxChanges($event)"
+                />
+                <label for="check-net" style="--size: 30px">
+                  <svg viewBox="0,0,50,50">
+                    <path d="M5 30 L 20 45 L 45 5"></path>
+                  </svg>
+                </label>
+              </div>
+              <h2 class="ms-2 fw-fold mb-0">.Net</h2>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <div class="bb text-center">
+          <button
+            type="submit"
+            [disabled]="fromChecking.invalid"
+            class="btn btn-primary"
+          >
+            submit
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

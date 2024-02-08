@@ -1,0 +1,242 @@
+<div class="templateDrivenForm py-4">
+  <h1 class="text-center my-3">Template Driven Form</h1>
+  <div class="forTest">
+    <h1>fname Class : {{ fname.value }}</h1>
+  </div>
+  <div class="col-lg-8 col-md-6 m-auto">
+    <!-- you can use [(ngModel)] To Get The Inputs Value By Define The OBJECT In Ts 
+    Containe The Name Of All Field In Form 
+    -- OR --
+    DEFINE Object Of Type Interface Contains the name of All Form Fields  -->
+
+    <form #forms="ngForm" class="" (submit)="formSubmitUsing_NgModel()">
+      <!-- or You Can Also Use Template Reference To All Inputs Fields And Send It To Registier Function  -->
+      <!-- <form
+      class=""
+      (ngSubmit)="
+        formSubmitUsing_TemplateRefe(
+          fname.value,
+          lname.value,
+          email.value,
+          mobile.value,
+          salary.value,
+          password.value,
+          confirmPassword.value,
+          image.value,
+          checkbox.checked
+        )
+      "
+    > -->
+      <div
+        class="left px-3 py-5 rounded rounded-4 border border-1 border-black bg-danger bg-opacity-50"
+      >
+        <div class="mb-3">
+          <label class="form-label w-100"
+            ><span class="fw-bold">First Name : </span>
+            <input
+              required
+              pattern="[A-Za-z]{3,}"
+              type="text"
+              class="form-control mt-2 {{fname.valid || fname.untouched ?'':'border border-2 border-danger '}}"
+              name="fname"
+              #fname="ngModel"
+              [(ngModel)]="newProduct.fname"
+              placeholder="Enter First Name Please"
+              aria-describedby="fnamelHelp"
+            />
+          </label>
+          <div
+            id="emailHelp"
+            class="form-text text-success bg-dark-subtle"
+            [hidden]="fname.valid || fname.untouched"
+          >
+            <p *ngIf="fname.errors?.['required']">The Fname Is Required</p>
+            <p *ngIf="fname.errors?.['pattern']">
+              The Fname Is Less Than 3 character
+            </p>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label w-100"
+            ><span class="fw-bold">Last Name : </span>
+            <input
+              required
+              pattern="[A-Za-z]{5}"
+              type="text"
+              class="form-control mt-2"
+              name="lname"
+              #lname="ngModel"
+              [(ngModel)]="newProduct.lname"
+              placeholder="Enter Last Name Please"
+              aria-describedby="lnamelHelp"
+            />
+          </label>
+          <div
+            id="emailHelp"
+            class="form-text bg-body-secondary"
+            [hidden]="lname.valid || lname.untouched"
+          >
+            <p
+              class="text-bg-light mb-0 pb-0"
+              *ngIf="lname.errors?.['required']"
+            >
+              the Last Name Is Required
+            </p>
+            <p
+              class="text-bg-light mb-0 pb-0"
+              *ngIf="lname.errors?.['pattern']"
+            >
+              the Last Name Length Should Less Than 4
+            </p>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label w-100">
+            <span class="fw-bold">Email address : </span>
+
+            <input
+              required
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+              type="email"
+              class="form-control mt-2"
+              name="email"
+              #email="ngModel"
+              [(ngModel)]="newProduct.email"
+              placeholder="Enter Email address Please"
+              aria-describedby="emailHelp"
+            />
+          </label>
+          <div
+            id="emailHelp"
+            class="form-text bg-body-secondary"
+            [hidden]="email.valid || email.untouched"
+          >
+            <p *ngIf="email.errors?.['required']">the email is required</p>
+            <p *ngIf="email.errors?.['pattern']">the email is Is Not Correct</p>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label w-100"
+            ><span class="fw-bold"> Mobile Number : </span>
+            <input
+              type="tel"
+              required
+              pattern="^01[0-2]\d{1,8}$"
+              class="form-control mt-2"
+              name="mobile"
+              #mobile="ngModel"
+              [(ngModel)]="newProduct.mobile"
+              placeholder="Enter Mobile Number Please"
+              aria-describedby="phonlHelp"
+            />
+          </label>
+          <div
+            id="emailHelp"
+            class="form-text bg-body-secondary"
+            [hidden]="mobile.valid || mobile.untouched"
+          >
+            <p *ngIf="mobile.errors?.['required']">the mobile is required</p>
+            <p *ngIf="mobile.errors?.['pattern']">the mobile is pattern</p>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label w-100">
+            <span class="fw-bold"> The Salary :</span>
+            <input
+              required
+              min="3"
+              max="11"
+              type="number"
+              class="form-control mt-2"
+              name="salary"
+              #salary="ngModel"
+              [(ngModel)]="newProduct.salary"
+              placeholder="Enter The Salary Please"
+              aria-describedby="salaryHelp"
+            />
+          </label>
+          <div
+            id="emailHelp"
+            class="form-text bg-body-secondary"
+            [hidden]="salary.valid || salary.untouched"
+          >
+            <p *ngIf="salary.errors?.['required']">the salary is required</p>
+            <p *ngIf="salary.errors?.['min']">the salary is min should 3</p>
+            <p *ngIf="salary.errors?.['max']">the salary is max should 11</p>
+          </div>
+        </div>
+        <div class="mb-3 w-100">
+          <label class="form-label w-100">
+            <span class="fw-bold"> Password </span>
+            <input
+              type="password"
+              minlength="3"
+              maxlength="11"
+              required
+              name="password"
+              #password="ngModel"
+              [(ngModel)]="newProduct.password"
+              placeholder="Enter Password Please"
+              class="form-control mt-2 w-100"
+            />
+          </label>
+          <div
+            id="emailHelp"
+            class="form-text text-bg-secondary"
+            [hidden]="password.valid || password.untouched"
+          >
+            <p *ngIf="password.errors?.['required']">The Password Is Required</p>
+            <p *ngIf="password.errors?.['minlength']">The Password milength is 3</p>
+          </div>
+        </div>
+        <div class="mb-3 w-100">
+          <label class="form-label w-100">
+            <span class="fw-bold">Confirm-Password </span>
+            <input
+              type="password"
+              name="confirmPassword"
+              #confirmPassword
+              [(ngModel)]="newProduct.confirmPassword"
+              placeholder="Enter Confirm-Password Please"
+              class="form-control mt-2 w-100"
+            />
+          </label>
+          <!-- <div id="emailHelp" class="form-text">
+                We'll never share your email with anyone else.
+              </div> -->
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label w-100">
+            <span class="fw-bold"> Image :</span>
+            <input
+              type="file"
+              class="form-control mt-2"
+              name="image"
+              #image
+              [(ngModel)]="newProduct.image"
+              placeholder="Enter image Please"
+              aria-describedby="salaryHelp"
+            />
+          </label>
+          <!-- <div id="emailHelp" class="form-text">
+                We'll never share your email with anyone else.
+              </div> -->
+        </div>
+        <div class="mb-3 form-check">
+          <label class="form-check-label">
+            <input
+              type="checkbox"
+              class="form-check-input"
+              name="checkbox"
+              #checkbox
+              [(ngModel)]="newProduct.checkboxInput"
+            />
+            <span class="fw-bold ms-1">Check me out</span></label
+          >
+        </div>
+        <button type="submit" [disabled]="forms.invalid" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
